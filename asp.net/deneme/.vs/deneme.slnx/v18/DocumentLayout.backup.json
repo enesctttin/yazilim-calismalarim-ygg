@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\deneme\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3387FE1-F22C-D313-3D51-634A44283946}|deneme\\deneme.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\deneme\\deneme\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3387FE1-F22C-D313-3D51-634A44283946}|deneme\\deneme.csproj|solutionrelative:deneme\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3387FE1-F22C-D313-3D51-634A44283946}|deneme\\deneme.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\deneme\\deneme\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3387FE1-F22C-D313-3D51-634A44283946}|deneme\\deneme.csproj|solutionrelative:deneme\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3387FE1-F22C-D313-3D51-634A44283946}|deneme\\deneme.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\deneme\\deneme\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3387FE1-F22C-D313-3D51-634A44283946}|deneme\\deneme.csproj|solutionrelative:deneme\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\deneme\\deneme\\Views\\Products\\Edit.cshtml",
+              "RelativeDocumentMoniker": "deneme\\Views\\Products\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\deneme\\deneme\\Views\\Products\\Edit.cshtml",
+              "RelativeToolTip": "deneme\\Views\\Products\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T19:00:32.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\deneme\\deneme\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "deneme\\Views\\Products\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\deneme\\deneme\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "deneme\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T19:00:30.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\deneme\\deneme\\Views\\Products\\Create.cshtml",
+              "RelativeDocumentMoniker": "deneme\\Views\\Products\\Create.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\deneme\\deneme\\Views\\Products\\Create.cshtml",
+              "RelativeToolTip": "deneme\\Views\\Products\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T19:00:30.115Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

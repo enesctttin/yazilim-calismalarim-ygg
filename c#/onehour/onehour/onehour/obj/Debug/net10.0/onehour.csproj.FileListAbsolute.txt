@@ -1,0 +1,14 @@
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\bin\Debug\net10.0\onehour.exe
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\bin\Debug\net10.0\onehour.deps.json
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\bin\Debug\net10.0\onehour.runtimeconfig.json
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\bin\Debug\net10.0\onehour.dll
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\bin\Debug\net10.0\onehour.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\onehour.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\onehour.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\onehour.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\onehour.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\onehour.dll
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\refint\onehour.dll
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\onehour.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\onehour.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\onehour\onehour\obj\Debug\net10.0\ref\onehour.dll

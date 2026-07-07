@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Back To Top Örneği</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* Sayfada scroll oluşması için yapay yükseklik veriyoruz */
+            height: 2000px; 
+            background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+        }
+
+        h2 { text-align: center; margin-top: 50px; }
+
+        /* BUTON TASARIMI */
+        .back-to-top {
+            /* 1. Konumlandırma (Senin görselindeki mantık) */
+            position: fixed;   /* Sayfa kaydırılsa bile ekranda sabit kal */
+            bottom: 30px;      /* Alttan 30px yukarıda */
+            right: 30px;       /* Sağdan 30px içeride */
+            
+            /* 2. Görünüm */
+            display: none;     /* BAŞLANGIÇTA GİZLİ OLSUN (jQuery ile açacağız) */
+            background-color: #0d6efd; /* Bootstrap mavisi */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px; /* Yuvarlak köşeler */
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: none;
+            z-index: 999; /* Her şeyin üstünde dursun */
+        }
+
+        .back-to-top:hover {
+            background-color: #0043a8; /* Üzerine gelince koyulaş */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Aşağıya Doğru Kaydır 👇</h2>
+    <p style="text-align: center;">Scroll yaptıkça sağ alttaki butonu izle.</p>
+
+    <button class="back-to-top">▲ Yukarı Çık</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            // ---------------------------------------------------
+            // 1. SCROLL (KAYDIRMA) OLAYI - GİZLE/GÖSTER
+            // ---------------------------------------------------
+            // Pencere (window) her kaydırıldığında bu fonksiyon çalışır
+            $(window).scroll(function(){
+                
+                // $(this).scrollTop() -> Sayfanın tepesinden ne kadar aşağı indiğimizi verir.
+                // Eğer 100 pikselden fazla aşağı indiysek:
+                if ($(this).scrollTop() > 100) {
+                    // Butonu efektli bir şekilde göster
+                    $(".back-to-top").fadeIn(); 
+                } else {
+                    // 100 pikselden azsa (tepedeysek) butonu gizle
+                    $(".back-to-top").fadeOut();
+                }
+            });
+
+            // ---------------------------------------------------
+            // 2. CLICK (TIKLAMA) OLAYI - YUKARI TAŞIMA
+            // ---------------------------------------------------
+            $(".back-to-top").click(function(){
+                
+                // 'html' ve 'body' etiketlerini seçip animasyon uyguluyoruz.
+                // scrollTop: 0 -> Sayfanın en tepesi demektir.
+                // 800 -> İşlemin kaç milisaniye süreceği (Hız).
+                $("html, body").animate({scrollTop: 0}, 800);
+                
+                return false; // Linkin varsayılan tıklama özelliğini engeller.
+            });
+
+        });
+    </script>
+
+</body>
+</html>

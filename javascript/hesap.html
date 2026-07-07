@@ -1,0 +1,484 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        padding: 20px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>hesap makinesi</h3>
+
+    <input type="text" id="ekran" readonly />
+    <div>
+      <button onclick="ekranaYaz('0')">0</button>
+      <button onclick="ekranaYaz('1')">1</button>
+      <button onclick="ekranaYaz('2')">2</button>
+      <button onclick="ekranaYaz('3')">3</button>
+      <button onclick="ekranaYaz('4')">4</button>
+      <button onclick="ekranaYaz('5')">5</button>
+      <button onclick="ekranaYaz('6')">6</button>
+      <button onclick="ekranaYaz('7')">7</button>
+      <button onclick="ekranaYaz('8')">8</button>
+      <button onclick="ekranaYaz('9')">9</button>
+      <button onclick="ekranaYaz('+')">+</button>
+      <button onclick="ekranaYaz('-')">-</button>
+      <button onclick="ekranaYaz('*')">*</button>
+      <button onclick="ekranaYaz('/')">/</button>
+      <button onclick="temizle()">temizle</button>
+      <button onclick="hesapla()">hesapla</button>
+    </div>
+
+    <script>
+      let ekran = document.getElementById("ekran"); // # işaretini kaldırdık
+
+      function ekranaYaz(deger) {
+        ekran.value += deger;
+      }
+
+      function temizle() {
+        ekran.value = "";
+      }
+
+      function hesapla() {
+        try {
+          // eval() ekrandaki string ifadeyi (örn: "2+5*3") matematiksel olarak hesaplar
+          ekran.value = eval(ekran.value);
+          alert("Sonuç: " + ekran.value);
+        } catch (e) {
+          // Eğer kullanıcı hatalı bir dizi girdiyse (örn: "++5") hata vermesin diye
+          ekran.value = "Hata!";
+        }
+      }
+    </script>
+  </body>
+</html> 
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3 id="baslik">hesap makinesi</h3>
+    <p
+      style="
+        font-size: 13px;
+        color: #555;
+        text-align: center;
+        font-family: sans-serif;
+        margin-bottom: 10px;
+      "
+    >
+      ⚠️ <strong>Not:</strong> Bu hesap makinesi şu an sadece
+      <b>tek işlem</b> (Örn: 12+5) ve <b>pozitif sayılarla</b> çalışmaktadır.
+      Lütfen negatif sayı veya zincirleme işlem (12+5+2) girmeyiniz.
+    </p>
+
+    <div class="calculator" style="border: 2px solid black">
+      <input
+        type="text"
+        id="ekran"
+        class="calculator-input"
+        value=""
+        readonly
+        style="width: 100%"
+      />
+
+      <div
+        class="calculator-keys"
+        onclick="myFunction(event)"
+        style="
+          display: grid;
+          grid-template-columns: repeat(4, 25%);
+          margin: 1px;
+          gap: 1px;
+        "
+      >
+        <button type="button" class="operator" value="+">+</button>
+        <button type="button" class="operator" value="-">-</button>
+        <button type="button" class="operator" value="*">*</button>
+        <button type="button" class="operator" value="/">/</button>
+
+        <button type="button" value="7">7</button>
+        <button type="button" value="8">8</button>
+        <button type="button" value="9">9</button>
+        <button type="button" class="operator" value="%">%</button>
+
+        <button type="button" value="4">4</button>
+        <button type="button" value="5">5</button>
+        <button type="button" value="6">6</button>
+        <button type="button" class="operator" value="^">^</button>
+
+        <button type="button" value="1">1</button>
+        <button type="button" value="2">2</button>
+        <button type="button" value="3">3</button>
+        <button type="button" value="0">0</button>
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          margin-top: 3px;
+          margin-bottom: 2px;
+        "
+      >
+        <button
+          type="button"
+          id="hesapla"
+          style="width: 49.8%"
+          class="btn1"
+          onclick="hesapla()"
+        >
+          hesapla
+        </button>
+        <button
+          type="button"
+          id="reset"
+          class="btn2"
+          style="width: 49.8%"
+          onclick="sil()"
+        >
+          reset
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // let sonuc=document.getElementById("baslik")
+      // let  abc=  document.querySelector("calculator-input")
+      // console.log(abc)
+      // console.log(sonuc)
+      // console.log(abc)
+
+      let ekran = document.querySelector(".calculator-input");
+      // let hesapla = document.querySelector("#hesapla"); // Buna gerek kalmadı fonksiyondan çağırıyoruz
+      // let reset = document.querySelector("#reset");     // Buna gerek kalmadı fonksiyondan çağırıyoruz
+
+      function myFunction(event) {
+        // Tıklanan şey bir buton mu kontrol et
+        if (!event.target.matches("button")) return;
+
+        // Tıklanan butonun value değerini al
+        let deger = event.target.value;
+
+        // Ekrana yazdır
+        ekran.value += deger;
+      }
+      let btn11 = document.querySelector(".btn1");
+
+      btn11.addEventListener("click", () => {
+        btn11.style.backgroundColor = "green";
+      });
+
+      let btn22=document.querySelector(".btn2");
+
+      btn22.addEventListener("click",()=>{
+
+
+        btn22.style.backgroundColor="red";
+        
+      });
+
+      function sil() {
+        // ekran.value="";   ilkek yöntem
+
+        // 1. Ekrandaki yazıyı alıyoruz (Örn: "123")
+        let mevcutDeger = ekran.value;
+
+        // 2. slice(0, -1) ile son karakteri (3) uçuruyoruz
+        let yeniDeger = mevcutDeger.slice(0, -1);
+
+        // 3. Kalanı ("12") ekrana geri yazıyoruz
+        ekran.value = yeniDeger;
+      }
+
+      // Eval kullanmadan metni parçalayıp hesaplayan fonksiyon
+      function hesapla() {
+        let metin = ekran.value;
+        let ayrac = "";
+
+        // Metnin içindeki operatörü tespit ediyoruz
+        if (metin.includes("+")) ayrac = "+";
+        else if (metin.includes("-")) ayrac = "-";
+        else if (metin.includes("*")) ayrac = "*";
+        else if (metin.includes("/")) ayrac = "/";
+        else if (metin.includes("%")) ayrac = "%";
+        else if (metin.includes("^")) ayrac = "^";
+
+        // Eğer operatör yoksa veya ekran boşsa işlem yapma
+        if (ayrac === "") return;
+
+        // Metni operatörden ikiye bölüyoruz
+        let parcalar = metin.split(ayrac);
+
+        // Parçaları sayıya çeviriyoruz
+        let s1 = parseFloat(parcalar[0]);
+        let s2 = parseFloat(parcalar[1]);
+        let sonuc = 0;
+
+        // Matematiksel mantığı kuruyoruz
+        switch (ayrac) {
+          case "+":
+            sonuc = s1 + s2;
+            break;
+          case "-":
+            sonuc = s1 - s2;
+            break;
+          case "*":
+            sonuc = s1 * s2;
+            break;
+          case "/":
+            sonuc = s1 / s2;
+            break;
+          case "%":
+            sonuc = s1 % s2;
+            break;
+          case "^":
+            sonuc = Math.pow(s1, s2);
+            break;
+        }
+
+        // Sonucu ekrana yazdırıyoruz
+        ekran.value = sonuc;
+      }
+    </script>
+  </body>
+</html>
+
+<!-- responsive hali -->
+
+<!-- Kanka, harika bir noktaya parmak bastın. Şu an kodumuzda çok fazla
+  "inline style" (satır içi stil, yani etiketlerin içine yazdığımız style="...") var. 
+  Responsive (mobil uyumlu) tasarım yaparken bu satır içi stiller ayağımıza dolanır. -->
+
+<!-- <!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive JS Hesap Makinesi</title>
+
+    <style>
+      /* 1. TÜM SAYFA AYARLARI */
+      * {
+        box-sizing: border-box; /* Kutuların taşmasını engeller */
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        /* Sayfayı tam ortalamak için Flexbox */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Ekranın tamamını kapla */
+      }
+
+      /* 2. HESAP MAKİNESİ KUTUSU (RESPONSIVE KISIM) */
+      .container {
+        text-align: center;
+        width: 90%;          /* Mobilde ekranın %90'ını kapla */
+        max-width: 400px;    /* Ama bilgisayarda 400px'ten fazla büyüme */
+      }
+
+      .calculator {
+        background-color: white;
+        padding: 20px;
+        border-radius: 15px; /* Köşeleri yuvarla */
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.2); /* Gölge ver */
+      }
+
+      /* 3. EKRAN (INPUT) */
+      .calculator-input {
+        width: 100%;
+        height: 60px;
+        font-size: 32px;
+        text-align: right;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        background-color: #fafafa;
+        color: #333;
+      }
+
+      /* 4. TUŞ TAKIMI (GRID) */
+      .calculator-keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 eşit sütun */
+        gap: 10px; /* Tuşlar arası boşluk */
+      }
+
+      /* 5. BUTONLAR */
+      button {
+        height: 60px; /* Mobilde parmak rahat basabilsin diye */
+        font-size: 20px;
+        border: none;
+        border-radius: 8px;
+        background-color: #e0e0e0;
+        cursor: pointer;
+        transition: background-color 0.2s; /* Tıklama efekti yumuşat */
+      }
+
+      button:hover {
+        background-color: #dcdcdc;
+      }
+
+      button:active {
+        transform: scale(0.95); /* Basınca hafif küçülme efekti */
+      }
+
+      /* Özel Renkler */
+      .operator {
+        background-color: #ff9f43;
+        color: white;
+      }
+      .operator:hover { background-color: #f39c12; }
+
+      .action-btn {
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+      }
+      
+      #hesapla { background-color: #2ecc71; color: white; flex: 1; }
+      #hesapla:hover { background-color: #27ae60; }
+      
+      #reset { background-color: #e74c3c; color: white; flex: 1; }
+      #reset:hover { background-color: #c0392b; }
+
+      /* 6. UYARI YAZISI */
+      .warning-text {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+      }
+
+      /* MOBİL İÇİN EK AYARLAR (Media Query) */
+      @media (max-width: 400px) {
+        .calculator-input { font-size: 24px; }
+        button { font-size: 18px; height: 50px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h3>Hesap Makinesi</h3>
+      
+      <p class="warning-text">
+        ⚠️ <strong>Not:</strong> Sadece <b>tek işlem</b> (Örn: 12+5) ve <b>pozitif sayılarla</b> çalışır. Negatif sayı veya zincirleme işlem girmeyiniz.
+      </p>
+
+      <div class="calculator">
+        <input type="text" id="ekran" class="calculator-input" value="" readonly />
+
+        <div class="calculator-keys" onclick="myFunction(event)">
+          <button type="button" class="operator" value="+">+</button>
+          <button type="button" class="operator" value="-">-</button>
+          <button type="button" class="operator" value="*">×</button>
+          <button type="button" class="operator" value="/">÷</button>
+
+          <button type="button" value="7">7</button>
+          <button type="button" value="8">8</button>
+          <button type="button" value="9">9</button>
+          <button type="button" class="operator" value="%">%</button>
+
+          <button type="button" value="4">4</button>
+          <button type="button" value="5">5</button>
+          <button type="button" value="6">6</button>
+          <button type="button" class="operator" value="^">^</button>
+
+          <button type="button" value="1">1</button>
+          <button type="button" value="2">2</button>
+          <button type="button" value="3">3</button>
+          <button type="button" value="0">0</button>
+        </div>
+
+        <div class="action-btn">
+          <button type="button" id="hesapla" onclick="hesapla()">HESAPLA</button>
+          <button type="button" id="reset" onclick="sil()">SİL (←)</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let ekran = document.querySelector(".calculator-input");
+
+      function myFunction(event) {
+        if (!event.target.matches("button")) return;
+        let deger = event.target.value;
+        ekran.value += deger;
+      }
+
+      function sil() {
+        let mevcutDeger = ekran.value;
+        ekran.value = mevcutDeger.slice(0, -1);
+      }
+
+      function hesapla() {
+        let metin = ekran.value;
+        let ayrac = "";
+
+        if (metin.includes("+")) ayrac = "+";
+        else if (metin.includes("-")) ayrac = "-";
+        else if (metin.includes("*")) ayrac = "*";
+        else if (metin.includes("/")) ayrac = "/";
+        else if (metin.includes("%")) ayrac = "%";
+        else if (metin.includes("^")) ayrac = "^";
+
+        if (ayrac === "") return;
+
+        let parcalar = metin.split(ayrac);
+        let s1 = parseFloat(parcalar[0]);
+        let s2 = parseFloat(parcalar[1]);
+        let sonuc = 0;
+
+        switch (ayrac) {
+          case "+": sonuc = s1 + s2; break;
+          case "-": sonuc = s1 - s2; break;
+          case "*": sonuc = s1 * s2; break;
+          case "/": sonuc = s1 / s2; break;
+          case "%": sonuc = s1 % s2; break;
+          case "^": sonuc = Math.pow(s1, s2); break;
+        }
+        ekran.value = sonuc;
+      }
+    </script>
+  </body>
+</html>
+ -->
+
+<!-- width: 90% ve max-width: 400px:
+
+İşte responsive olayın sırrı bu. Dedim ki: "Kutu, mobildeyken ekranın %90'ını kapla 
+(kenarlardan boşluk kalsın). Ama bilgisayarda açarsam sakın ekranı boydan boya kaplama, 
+en fazla 400 piksel genişle."
+
+Satır İçi Stilleri Kaldırdım:
+
+HTML'in içindeki style="..." kısımlarını sildim, hepsini yukarıda <style> etiketi içine aldım.
+     Böylece kodun hem okunaklı oldu hem de yönetilebilir.
+
+Buton Yükseklikleri (height: 60px):
+
+Telefonda parmakla basmak zordur. Butonları biraz büyüttüm ki kullanıcı yanlış tuşa basmasın.
+
+Flexbox ile Ortalama:
+
+body etiketine display: flex vererek hesap makinesini ekranın tam ortasına (hem dikey hem yatay) mıhladım. -->

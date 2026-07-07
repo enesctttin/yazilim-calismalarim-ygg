@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let diziii = ["elma", "armut", "muz", "çilek"];
+
+      diziii.forEach((eleman, index) => {
+        console.log(index + " . " + eleman);
+      });
+      //  for each dizi elemanlarını tek tek yazdırır  index numarası ile birlikte
+
+      // map: her öğe için yeni bir dizi döner (dönüştürme için).
+      // forEach: geri dönüş yok; yan etki (side-effect) için kullanılır.
+      // Arrow function (=>) ile normal function arasındaki en önemli fark: this bağlanması, arguments ve constructor davranışlarıdır.
+
+      diziii = ["elma", "armut", "muz", "çilek"];
+      const kelime = diziii.filter((eleman) => eleman.length > 4);
+
+      console.log(kelime);
+      // 4 karakterden uzun olan meyveleri filtreledik
+    </script>
+
+    <!-- onclick tıklandığında çalıştır demektir -->
+    <!-- scriptte arttir() fonksiyonu yazıcaz -->
+    <button id="arttir" onclick="arttir()">arttir</button>
+    <span id="count"> 0</span>
+    <button id="azalt" onclick="azalt()">azalt</button>
+
+    <script>
+      // Dom Donimasyonu ile element seçme ve değiştirme
+      //  document ile html elementlerine erişilir
+
+      let sayma = 0;
+
+      const sayiElement = document.getElementById("count");
+
+      console.log(sayiElement);
+
+      function guncelle() {
+        sayiElement.innerText = sayma;
+      }
+      function arttir() {
+        sayma++;
+        guncelle();
+      }
+
+      function azalt() {
+        // kosul ekledik sayma sıfırın altına inmesin
+        // koşul true ise çalışır
+
+        if (sayma > 0) {
+          sayma--;
+        }
+        guncelle();
+      }
+
+      // butonlara tıklanınca sayma değişkeni artar veya azalır ve guncelle fonksiyonu ile html deki sayı güncellenir
+      // innerText ile elementin içindeki metin değiştirilir
+      // getElementById ile id ye göre element seçilir
+      //  diğer element seçme yöntemleri de vardır  class name tag name query selector gibi
+
+      // query selector ile element seçme
+      // burada id si count olan elementi seçtik
+
+      let queryElement = document.querySelector("#count");
+      console.log(queryElement);
+      //  query selector ile id seçimi # ile yapılır  class için . ile yapılır
+    </script>
+
+    <script>
+      // html deki elemntleri burada js içinde tanımlıyoruz
+      const input = document.getElementById("todoInput");
+
+      const taskText = input.value;
+      // inputun içindeki değeri aldık
+
+      if (taskText === "") {
+        alert("Lütfen bir görev girin! input boş olamaz.");
+        //   input boşsa uyarı veriyoruz
+        //  ve fonksiyondan çıkıyoruz
+        // return ile fonksiyondan çıkıyoruz
+        return;
+      }
+
+      // li elementi oluşturma
+      const li = document.createElement("li");
+      li.textContent = taskText;
+      //   li elementinin içine inputtan aldığımız texteyi yazdık
+
+      // buton oluşturma
+      const completeBtn = document.createElement("button");
+      //   tamamlandı butonunu oluşturduk
+      completeBtn.textContent = "tamamlandi";
+      //   butonun içine tamamlandi yazdık
+      completeBtn.addEventListener("click", () => {
+        // butona tıklandığında yapılacak işlemi tanımladık
+        li.style.textDecoration = "line-through";
+        // li elementinin stilini değiştirdik
+        // textDecoration ile üstü çizili yaptık
+      });
+    </script>
+
+    <script>
+      // $(document).ready(...) -> Sayfa tamamen yüklendiğinde çalış demektir.
+      $(document).ready(function () {
+        // buraya çalışacak kodlar
+      });
+
+      $("#p1").click(function () {
+        // Sadece id="p1" olan elemente tıklayınca burası çalışır.
+        alert("p1 ID'li paragrafa tıkladın!");
+      });
+
+      $(".paragraf").click(function () {
+        // $(this) NEDİR?
+        // Sayfada birden fazla ".paragraf" var. Hepsini aynı anda değiştirmek istemiyoruz.
+        // $(this) -> "O an hangisine tıkladıysam SADECE ONU etkile" demektir.
+        //  this yerine .paragraf yazarsak, tüm .paragraf class'lı elementler etkilenir.
+
+        // addClass -> CSS'teki .paragrafrenk özelliklerini bu elemente ekler.
+        $(this).addClass("paragrafrenk");
+
+        // İPUCU: Eğer tekrar tıklayınca eski haline dönsün istersen:
+        // $(this).toggleClass("paragrafrenk");
+        // satırını kullanabilirsin. (toggle = aç/kapa anahtarı)
+      });
+
+    //   $(this)  java scripte bu tam oturmadı eleman seçme 
+
+    // readonly klavye kullanımı için
+    </script>
+  </body>
+</html>

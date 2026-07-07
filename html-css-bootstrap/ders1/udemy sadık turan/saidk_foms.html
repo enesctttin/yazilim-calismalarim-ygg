@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=,, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- kullanıcıdan bilgi alıcağımız zaman form u kullanırız -->
+    <!-- form içindeki action alınan bilgileri backende nereye gönderileceğini söyler oradi dosyanın içine kayıt eder -->
+    <form action="register.php">
+      Ad : <input type="text" />
+      <label for="name">soyad</label>
+      <input type="text" id="name" />
+      <label for="yas">yas</label>
+      <input type="text" id="yas" />
+      <button type="submit">kaydet</button>
+      <!--  bunlar inline eleman bunları div  icine alırsan block eleman içinde kullanıldığundan alt alt geçer -->
+
+      <div>
+        <p>en sevdigin dil</p>
+        <input type="radio" name="" id="html " />
+        <label for="html"> html </label>
+        <input type="radio" name="" id="css " />
+        <label for="css"> css </label>
+        <!-- name özelliği ise name aynı olanlardan bir tanesi seçilebilir  -->
+
+        <p>cinsiyet</p>
+        <input type="radio" name="cins" id="1" />
+        <label for="1">erkek</label>
+        <input type="radio" name="cins" id="2" />
+        <label for="2">kiz</label>
+        <button type="submit">gonder</button>
+      </div>
+      <div>
+        <label for="intro"> kendini tanit</label>
+        <textarea id="intro"></textarea>
+      </div>
+      <div>
+        <label for="il">sehirler</label>
+        <select name="" id="il">
+          <option value="41">kocaeli</option>
+          <option value="34">istanbul</option>
+        </select>
+      </div>
+      <div>
+        <label for="em">mail?</label>
+        <input type="email" id="em" />
+        <!-- mail formatına uygun girilmesini ister uygun girilmezse uyarı verir -->
+      </div>
+    </form>
+    <br />
+    <hr />
+    <!--  deneme yapp -->
+    <h1>Uygulama eksiksiz doldur</h1>
+    <br />
+    <h2>hesap bilgileri</h2>
+
+    <form
+      action="
+        "
+    >
+      <table border="1">
+        <tr>
+          <td><label for="1"> isminiz:</label></td>
+          <td>
+            <input type="text" id="1" placeholder="isminiz" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="2"></label> e-posta</td>
+          <td><input type="email" placeholder="e-posta" id="2" /></td>
+        </tr>
+        <tr>
+          <td><label for="3"> parola</label></td>
+          <td><input type="password" placeholder="pin" id="3" /></td>
+        </tr>
+      </table>
+      <br />
+      <h2>diger bilgiler</h2>
+      <table>
+        <tr>
+          <td><label for="4"> kullanici adi</label></td>
+          <td><input type="text" id="4" /></td>
+        </tr>
+        <tr>
+          <td><label for="5"> soy isim</label></td>
+          ,
+          <!-- araya mesafe koymak icin -->
+          <td style="width: 50px"></td>
+          <td><input type="text" id="5" /></td>
+        </tr>
+        <tr>
+          <td><label for="sehir"></label>cinsiyet</td>
+          <td>
+            <select name="" id="sehir">
+              <option value="0">erkek</option>
+              <option value="*">kiz</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>hopi</td>
+          <td><input type="radio" /> bisiklet</td>
+          <td><input type="radio" />basketbol</td>
+          <td><input type="radio" />kitap</td>
+          <td><input type="checkbox" /> araba</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit">kayitet</button></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

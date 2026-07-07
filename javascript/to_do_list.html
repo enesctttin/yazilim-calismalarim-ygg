@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>To Do List</h1>
+    <input type="text" id="todoInput" placeholder="Bir gorev gir" />
+    <button id="addBtn">ekle</button>
+    <ul id="todoList"></ul>
+
+    <!-- <ul id="todoList">
+      <li>
+        Todo item 1 <button>tamamlandi</button>
+        <button>sil</button>
+      </li>
+    </ul> -->
+    <!-- js kodunu burada yazdık script içine -->
+    <script>
+
+      // html deki elemntleri burada js içinde tanımlıyoruz
+      const input = document.getElementById("todoInput");
+    //   input elementini aldık
+      const addBtn = document.getElementById("addBtn");
+    //   ekle butonunu aldık
+      const todoList = document.getElementById("todoList");
+
+      // düzgün çalıştığını konsolda kontrol edelim
+      console.log(input);
+      console.log(addBtn);
+      console.log(todoList);
+        // butona tıklandığında yapılacak işlemi tanımlıyoruz
+      addBtn.addEventListener("click", () => {
+        // butona tıklandığında yapılacak işlemler buraya gelecek
+        const taskText = input.value;
+        // inputun içindeki değeri aldık
+        if (taskText === "") {
+          alert("Lütfen bir görev girin! input boş olamaz.");
+        //   input boşsa uyarı veriyoruz
+        //  ve fonksiyondan çıkıyoruz
+        // return ile fonksiyondan çıkıyoruz
+          return;
+        } else {
+            // li elementi oluşturma
+          const li = document.createElement("li");
+        //   li elementini oluşturduk
+          li.textContent = taskText;
+        //   li elementinin içine inputtan aldığımız texteyi yazdık
+          console.log(li);
+          // bu yaptığımız sadece li elementini oluşturdu
+          // ve texte yazdığımız console da görünüyor
+
+          // buton oluşturma
+          const completeBtn = document.createElement("button");
+        //   tamamlandı butonunu oluşturduk
+          completeBtn.textContent = "tamamlandi";
+        //   butonun içine tamamlandi yazdık
+          completeBtn.addEventListener("click", () => {
+            // butona tıklandığında yapılacak işlemi tanımladık
+            li.style.textDecoration = "line-through";
+            // li elementinin stilini değiştirdik
+            // textDecoration ile üstü çizili yaptık
+          });
+
+          // sil butonu oluşturma
+          const deleteBtn = document.createElement("button");
+        //   sil butonunu oluşturduk
+          deleteBtn.textContent = "sil";
+        //   butonun içine sil yazdık
+          deleteBtn.addEventListener("click", () => {
+            // butona tıklandığında yapılacak işlemi tanımladık
+            todoList.removeChild(li);
+            // todoList ten li yi sildik
+          });
+          // removeChild ile li yi todoList ten sildik
+
+          // elemaları birleştirme
+          // li yi ul ye ekleme
+          // todoList e li yi ekliyoruz
+          li.appendChild(completeBtn);
+          li.appendChild(deleteBtn);
+        //   tamamlandi ve sil butonlarını li ye ekliyoruz
+          todoList.appendChild(li);
+        //   todoList e li yi ekliyoruz
+          // inputu temizleme
+          input.value = "";
+          // ekleme işleminden sonra inputu boşaltıyoruz
+          // böylece yeni görev girebiliriz
+          // input.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

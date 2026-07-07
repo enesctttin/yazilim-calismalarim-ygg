@@ -1,0 +1,78 @@
+﻿@* 1. BAĞLANTIYI KARŞILAMA (MODEL BINDING) Garsonun bize gönderdiği tepsiyi (veriyi) masada karşılıyoruz. 
+En üste '@model' yazarak sayfaya diyoruz ki: "Hazır ol! Sana Controller'dan 'deneme.Models.Product' kalıbında bir LİSTE gelecek."
+*@
+
+@model List<deneme.Models.Product>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ürün Listemiz</title>
+    <style>
+        table { border-collapse: collapse; width: 80%; margin-top: 20px; font-family: sans-serif; }
+        th, td { border: 1px solid #dddddd; text-align: left; padding: 10px; }
+        th { background-color: #f2f2f2; }
+        
+        .btn { padding: 6px 12px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-right: 5px; font-family: sans-serif; font-size: 13px;}
+        .btn-ekle { background-color: #28a745; color: white; display: inline-block; margin-bottom: 10px; }
+        .btn-guncelle { background-color: #007bff; color: white; }
+        .btn-sil { background-color: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>Restoranımıza Hoş Geldiniz!</h1>
+    <h3>İşte Menüdeki Ürünlerimiz:</h3>
+
+@* YENİ ÜRÜN EKLEME BUTONU (Tablonun Üstünde) *@ @* Bu link garsonun (Controller) 'Create' metoduna gidecek *@
+    <div>
+        <a href="/Products/Create" class="btn btn-ekle">+ Yeni Ekle (Klasik HTML)</a>
+
+        <a asp-controller="Products" asp-action="Create" class="btn btn-ekle">+ Yeni Ekle (Tag Helper)</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ürün Adı</th>
+                <th>Fiyatı</th>
+                <th>Stok Adedi</th>
+                <th>İşlemler </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @* 2. VERİLERİ DÖNGÜYE SOKMA (RAZOR SİHRİ) Tıpkı C#'ta yaptığımız gibi, 
+            gelen listenin ('Model' kelimesi tepsiyi temsil eder) içinde dönüyoruz 
+            ve her bir ürün için HTML tablosuna yeni bir satır (<tr>) ekliyoruz. *@
+
+            @foreach (var urun in Model)
+            {
+                <tr>
+                    <td>@urun.Id</td>
+                    <td>@urun.Name</td>
+                    <td>@urun.Price ₺</td>
+                    <td>@urun.Stock Adet</td>
+                    
+
+                    <td>
+
+                    @* 1. SÜTUN: KLASİK HTML (HREF) YÖNTEMİ *@
+                    @* Adresi kendi ellerimizle "Bölü (/) Controller Adı / Metot Adı / Ürün ID" şeklinde yazarız. *@
+
+                        <a href="/Products/Edit/@urun.Id" class="btn btn-guncelle">Güncelle</a>
+
+                    @* 2. SÜTUN: ASP.NET TAG HELPER YÖNTEMİ *@
+                    @* Nereye gideceğini 'asp-' etiketleriyle söyleriz, arka planda C# bunu klasik HTML'e kendi çevirir. *@
+
+                        <a asp-controller="Products" asp-action="Delete" asp-route-id="@urun.Id" class="btn btn-sil">Sil</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

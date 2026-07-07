@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basit Wordle</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      } /* Taşmaları önler */
+
+      body {
+        background-color: #121213;
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 10px; /* Telefondan girenler için kenar boşluğu */
+        min-height: 100vh; /* Ekranı kapla */
+        user-select: none; /* Telefondan seçimi engelle */
+        -webkit-user-select: none;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 500px; /* Mobilde çok yayılmasın */
+        margin-bottom: 10px;
+        padding: 0 10px;
+      }
+      h1 {
+        margin: 0;
+        letter-spacing: 1px;
+        font-size: 24px;
+      }
+
+      #restart-btn {
+        background-color: white;
+        color: black;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      /* OYUN ALANI (GRID)  Responsive Grid: Ekran küçükse kutular küçülür */
+      #grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 Eşit Parça */
+        grid-template-rows: repeat(6, 1fr);
+        gap: 5px;
+        width: 100%;
+        max-width: 350px; /* PC'de devasa olmasın diye sınır */
+        aspect-ratio: 5 / 6; /* En-Boy oranını koru */
+        margin-bottom: 20px;
+      }
+
+      .kutu {
+        border: 2px solid #3a3a3c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8rem; /* Yazı boyutu göreceli olsun */
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      /* RENKLER */
+      .yesil {
+        background-color: #538d4e;
+        border-color: #538d4e;
+      }
+      .sari {
+        background-color: #b59f3b;
+        border-color: #b59f3b;
+      }
+      .gri {
+        background-color: #3a3a3c;
+        border-color: #3a3a3c;
+      }
+
+      #mesaj {
+        height: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        color: orange;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      /* --- KLAVYE --- */
+      #klavye {
+        width: 100%;
+        max-width: 500px; /* PC'de çok yayılmasın */
+        display: flex;
+        flex-direction: column;
+        gap: 8px; /* Satırlar arası boşluk */
+        padding: 0 5px;
+      }
+
+      .satir {
+        display: flex;
+        width: 100%;
+        gap: 6px; /* Tuşlar arası boşluk */
+        justify-content: center;
+      }
+
+      .tus {
+        background-color: #818384;
+        color: white;
+        border: none;
+        border-radius: 4px;
+
+        flex: 1; /* Boşluğu eşit yap */
+
+        height: 58px; 
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        touch-action: manipulation; 
+      }
+
+      .tus:active {
+        background-color: #565758;
+      }
+
+      .genis {
+        flex: 1.5; /* Enter ve Sil tuşları diğerlerinden 1.5 kat büyük olsun */
+        font-size: 12px;
+      }
+
+      /* Çok küçük ekranlar için yazı küçültme */
+      @media (max-width: 350px) {
+        .tus {
+          height: 45px;
+          font-size: 12px;
+        }
+        .kutu {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>WORDLE TR</h1>
+      <button id="restart-btn" onclick="oyunuSifirla()">Yeniden Oyna</button>
+    </header>
+
+    <div id="grid">
+      <div id="kutu-0" class="kutu"></div>
+      <div id="kutu-1" class="kutu"></div>
+      <div id="kutu-2" class="kutu"></div>
+      <div id="kutu-3" class="kutu"></div>
+      <div id="kutu-4" class="kutu"></div>
+      <div id="kutu-5" class="kutu"></div>
+      <div id="kutu-6" class="kutu"></div>
+      <div id="kutu-7" class="kutu"></div>
+      <div id="kutu-8" class="kutu"></div>
+      <div id="kutu-9" class="kutu"></div>
+      <div id="kutu-10" class="kutu"></div>
+      <div id="kutu-11" class="kutu"></div>
+      <div id="kutu-12" class="kutu"></div>
+      <div id="kutu-13" class="kutu"></div>
+      <div id="kutu-14" class="kutu"></div>
+      <div id="kutu-15" class="kutu"></div>
+      <div id="kutu-16" class="kutu"></div>
+      <div id="kutu-17" class="kutu"></div>
+      <div id="kutu-18" class="kutu"></div>
+      <div id="kutu-19" class="kutu"></div>
+      <div id="kutu-20" class="kutu"></div>
+      <div id="kutu-21" class="kutu"></div>
+      <div id="kutu-22" class="kutu"></div>
+      <div id="kutu-23" class="kutu"></div>
+      <div id="kutu-24" class="kutu"></div>
+      <div id="kutu-25" class="kutu"></div>
+      <div id="kutu-26" class="kutu"></div>
+      <div id="kutu-27" class="kutu"></div>
+      <div id="kutu-28" class="kutu"></div>
+      <div id="kutu-29" class="kutu"></div>
+    </div>
+
+    <div id="mesaj"></div>
+
+    <div id="klavye">
+      <div class="satir">
+        <button class="tus" onclick="islemYap('E')">E</button>
+        <button class="tus" onclick="islemYap('R')">R</button>
+        <button class="tus" onclick="islemYap('T')">T</button>
+        <button class="tus" onclick="islemYap('Y')">Y</button>
+        <button class="tus" onclick="islemYap('U')">U</button>
+        <button class="tus" onclick="islemYap('I')">I</button>
+        <button class="tus" onclick="islemYap('O')">O</button>
+        <button class="tus" onclick="islemYap('P')">P</button>
+        <button class="tus" onclick="islemYap('Ğ')">Ğ</button>
+        <button class="tus" onclick="islemYap('Ü')">Ü</button>
+      </div>
+      <div class="satir">
+        <button class="tus" onclick="islemYap('A')">A</button>
+        <button class="tus" onclick="islemYap('S')">S</button>
+        <button class="tus" onclick="islemYap('D')">D</button>
+        <button class="tus" onclick="islemYap('F')">F</button>
+        <button class="tus" onclick="islemYap('G')">G</button>
+        <button class="tus" onclick="islemYap('H')">H</button>
+        <button class="tus" onclick="islemYap('J')">J</button>
+        <button class="tus" onclick="islemYap('K')">K</button>
+        <button class="tus" onclick="islemYap('L')">L</button>
+        <button class="tus" onclick="islemYap('Ş')">Ş</button>
+        <button class="tus" onclick="islemYap('İ')">İ</button>
+      </div>
+      <div class="satir">
+        <button class="tus genis" onclick="islemYap('ENTER')">ENTER</button>
+        <button class="tus" onclick="islemYap('Z')">Z</button>
+        <button class="tus" onclick="islemYap('C')">C</button>
+        <button class="tus" onclick="islemYap('V')">V</button>
+        <button class="tus" onclick="islemYap('B')">B</button>
+        <button class="tus" onclick="islemYap('N')">N</button>
+        <button class="tus" onclick="islemYap('M')">M</button>
+        <button class="tus" onclick="islemYap('Ö')">Ö</button>
+        <button class="tus" onclick="islemYap('Ç')">Ç</button>
+        <button class="tus genis" onclick="islemYap('SIL')">⌫</button>
+      </div>
+    </div>
+
+    <script>
+      const kelimeListesi = [
+        "KALEM",
+        "KİTAP",
+        "RADYO",
+        "SEHPA",
+        "DOLAP",
+        "ÇORAP",
+        "BALIK",
+        "KAŞIK",
+        "TABAK",
+        "BİLET",
+        "CEVİZ",
+        "DAVUL",
+        "EKMEK",
+        "FENER",
+        "GÜNEŞ",
+        "HELVA",
+        "ISLIK",
+        "JİLET",
+        "KABAK",
+        "LİMON",
+      ];
+
+      let hedefKelime = "";
+      let suankiSatir = 0; // 0'dan 5'e kadar (Toplam 6 hak)
+      let suankiKutu = 0; // 0'dan 4'e kadar (Harfler)
+      let oyunBitti = false; // Oyun bittiyse tuşlar kilitlenir o zaman true yapıcaz satır sayısı 5 olunca
+
+      // Sayfa ilk açıldığında hemen bir kelime seç
+      yeniKelimeSec();
+
+      function yeniKelimeSec() {
+        hedefKelime =
+         kelimeListesi[Math.floor(Math.random() * kelimeListesi.length)];
+         console.log("Hedef Kelime (Kopya): " + hedefKelime);
+
+      }
+
+      // HTML'deki butonlar tıklandığında burası çalışır
+      function islemYap(tus) {
+        if (oyunBitti) return; // Oyun bittiyse hiçbir işlem yapma
+
+        if (tus === "ENTER") {
+          tahminiKontrolEt();
+        } else if (tus === "SIL") {
+          harfSil();
+        } else {
+          harfYaz(tus);
+        }
+      }
+
+      // --- HARF YAZMA ---
+      function harfYaz(harf) {
+        if (suankiKutu < 5) {
+          // Satır dolmadıysa yaz
+          // Kutunun ID'sini bul: (Satır * 5) + Sütun
+          let kutuIndex = suankiSatir * 5 + suankiKutu;
+          document.getElementById("kutu-" + kutuIndex).innerText = harf;
+          suankiKutu++;
+        }
+      }
+
+      // --- HARF SİLME ---
+      function harfSil() {
+        if (suankiKutu > 0) {
+          // Silinecek harf varsa sil
+          suankiKutu--; // Bir önceki kutuya dön
+          let kutuIndex = suankiSatir * 5 + suankiKutu;
+          document.getElementById("kutu-" + kutuIndex).innerText = "";
+        }
+      }
+
+      function tahminiKontrolEt() {
+        if (suankiKutu < 5) {
+          document.getElementById("mesaj").innerText = "5 harf girmelisiniz!";
+          // 2 saniye sonra mesajı sil
+          setTimeout(
+            () => (document.getElementById("mesaj").innerText = ""),
+            2000,
+          );
+          return;
+        }
+
+        let tahmin = "";
+        let baslangic = suankiSatir * 5;
+
+        // Yazılan harfleri toplayıp kelime yap
+        for (let i = 0; i < 5; i++) {
+          tahmin += document.getElementById(
+            "kutu-" + (baslangic + i),
+          ).innerText;
+        }
+
+        // Renklendirme Döngüsü
+        for (let i = 0; i < 5; i++) {
+          let kutu = document.getElementById("kutu-" + (baslangic + i));
+          let harf = tahmin[i];
+
+          if (harf === hedefKelime[i]) {
+            kutu.classList.add("yesil"); // Harf ve Yer Doğru
+          } else if (hedefKelime.includes(harf)) {
+            kutu.classList.add("sari"); // Harf var, Yer Yanlış
+          } else {
+            kutu.classList.add("gri"); // Harf Yok
+          }
+        }
+
+        if (tahmin === hedefKelime) {
+          // 1. Durum: KAZANDI
+          document.getElementById("mesaj").innerText = "TEBRİKLER! 🏆";
+          oyunBitti = true;
+        } else if (suankiSatir === 5) {
+          // 2. Durum: KAYBETTİ
+          document.getElementById("mesaj").innerText =
+            "BİLEMEDİN! Kelime: " + hedefKelime;
+          oyunBitti = true;
+        } else {
+          // 3. Durum: DEVAM 
+          suankiSatir++; // Alt satıra geç
+          suankiKutu = 0; // Sütunu başa al
+        }
+      }
+
+      function oyunuSifirla() {
+        // Değişkenleri başlangıca döndür
+        suankiSatir = 0;
+        suankiKutu = 0;
+        oyunBitti = false;
+        document.getElementById("mesaj").innerText = "";
+
+        // HTML'deki tüm kutuları temizle
+        for (let i = 0; i < 30; i++) {
+          let kutu = document.getElementById("kutu-" + i);
+          kutu.innerText = "";
+          kutu.className = "kutu"; // Renk sınıflarını (yesil, sari, gri) siler
+        }
+              yeniKelimeSec();
+
+      }
+    </script>
+  </body>
+</html>
+
+
+
+<!-- onclick kullandığımızda HTML'in içine JavaScript karıştırmış oluyoruz. Bunu ayırmanın yolu addEventListener kullanmaktır. -->
+ <!-- Eski Hali:
+
+HTML
+<button class="tus" onclick="islemYap('E')">E</button> -->
+
+<!-- Yeni Hali (Tertemiz):
+
+HTML
+<button class="tus">E</button>   -->
+
+
+<!-- JavaScript tarafında tüm tuşları seçip, hepsine tek tek "Sana tıklanırsa bunu yap" emrini vereceğiz.
+
+Bunu <script> etiketinin içine, en alta ekleyebilirsin:
+
+JavaScript
+// 1. Tüm tuşları (class="tus" olanları) seç
+const tumTuslar = document.querySelectorAll('.tus');
+
+// 2. Her bir tuş için döngü kur
+tumTuslar.forEach(function(tus) {
+    
+    // 3. Her tuşa bir "Tıklama Dinleyicisi" (EventListener) ekle
+    tus.addEventListener('click', function() {
+        
+        // Tıklanan tuşun içindeki yazıyı al (E, R, ENTER, ⌫ vb.)
+        let basilanHarf = this.innerText;
+        
+        // Bizim silme tuşunun içi simge (⌫) olduğu için onu düzeltelim
+        if (basilanHarf === "⌫") {
+            basilanHarf = "SIL";
+        }
+        
+        // Ana fonksiyonu çalıştır
+        islemYap(basilanHarf);
+    });
+}); -->

@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0463DC4E-AFF3-E0D3-74B7-4D16A495235C}|NorthwindLinq\\NorthwindLinq.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\northwindlinq\\northwindlinq\\controllers\\northwindcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0463DC4E-AFF3-E0D3-74B7-4D16A495235C}|NorthwindLinq\\NorthwindLinq.csproj|solutionrelative:northwindlinq\\controllers\\northwindcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0463DC4E-AFF3-E0D3-74B7-4D16A495235C}|NorthwindLinq\\NorthwindLinq.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\northwindlinq\\northwindlinq\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0463DC4E-AFF3-E0D3-74B7-4D16A495235C}|NorthwindLinq\\NorthwindLinq.csproj|solutionrelative:northwindlinq\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0463DC4E-AFF3-E0D3-74B7-4D16A495235C}|NorthwindLinq\\NorthwindLinq.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\northwindlinq\\northwindlinq\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0463DC4E-AFF3-E0D3-74B7-4D16A495235C}|NorthwindLinq\\NorthwindLinq.csproj|solutionrelative:northwindlinq\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0463DC4E-AFF3-E0D3-74B7-4D16A495235C}|NorthwindLinq\\NorthwindLinq.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\northwindlinq\\northwindlinq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0463DC4E-AFF3-E0D3-74B7-4D16A495235C}|NorthwindLinq\\NorthwindLinq.csproj|solutionrelative:northwindlinq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderDetail.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\NorthwindLinq\\Models\\OrderDetail.cs",
+              "RelativeDocumentMoniker": "NorthwindLinq\\Models\\OrderDetail.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\NorthwindLinq\\Models\\OrderDetail.cs",
+              "RelativeToolTip": "NorthwindLinq\\Models\\OrderDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T11:48:50.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NorthwindController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\NorthwindLinq\\Controllers\\NorthwindController.cs",
+              "RelativeDocumentMoniker": "NorthwindLinq\\Controllers\\NorthwindController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\NorthwindLinq\\Controllers\\NorthwindController.cs",
+              "RelativeToolTip": "NorthwindLinq\\Controllers\\NorthwindController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAvwGgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T09:54:32.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\NorthwindLinq\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "NorthwindLinq\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\NorthwindLinq\\Models\\Order.cs",
+              "RelativeToolTip": "NorthwindLinq\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T11:49:35.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\NorthwindLinq\\Program.cs",
+              "RelativeDocumentMoniker": "NorthwindLinq\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\NorthwindLinq\\NorthwindLinq\\Program.cs",
+              "RelativeToolTip": "NorthwindLinq\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA9wBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T08:12:53.151Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

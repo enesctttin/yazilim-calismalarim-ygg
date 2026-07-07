@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Olaylar ve Efektler</title>
+  </head>
+  <body>
+
+    <form>
+      <p>
+        Adınız (Yazıp boşluğa tıkla): <br>
+        <input type="text" class="control" />
+      </p>
+
+      <p>
+        Hobiler (Birini seç): <br>
+        <select class="control">
+          <option value="spor" selected="selected">Spor yapmak</option>
+          <option value="müzik">Müzik dinlemek</option>
+        </select>
+      </p>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // HATIRLATMA: "document" yazarken tırnak işareti kullanılmaz!
+        // $(document).ready(...) -> Sayfanın tam yüklenmesini bekler.
+        $(document).ready(function(){
+            
+            // --- CHANGE EVENT ---
+            // class="control" olan elemanlarda değişiklik olunca çalışır.
+            $(".control").change(function(){
+                
+                // $(this).val() -> O an işlem yaptığın kutunun içindeki değeri alır.
+                console.log("Seçilen Değer: " + $(this).val());
+                
+                alert("Değişiklik algılandı! Yeni değer: " + $(this).val());
+            });
+
+        });
+    </script>
+
+
+    <hr><hr><br>
+
+    <p id="yazi">Sıfırdan Web Developer Eğitimi 🚀</p>
+
+    <button id="hide">Hide (Gizle)</button>
+    <button id="show">Show (Göster)</button>
+    <button id="toggle">Toggle (Aç/Kapa)</button>
+
+
+    <script>
+        $(document).ready(function(){
+
+            // --- HIDE (GİZLEME) ---
+            $("#hide").click(function(){ 
+                // "slow" parametresi yavaşça kaybolmasını sağlar.
+                // İstersen milisaniye de yazabilirsin: .hide(2000) gibi.
+                $("#yazi").hide("slow"); 
+            });
+
+
+            // --- SHOW (GÖSTERME) ---
+            $("#show").click(function(){ 
+                // Burada bir "Callback Function" kullandık.
+                // Yani: Önce 1000ms (1 saniye) sürerek açıl, İŞİN BİTİNCE alert ver.
+                $("#yazi").show(1000, function(){
+                     alert("Gösterme işlemi tamamlandı!");
+                });
+            });
+
+            
+            // --- TOGGLE (AÇ / KAPA) ---
+            // Varsa gizler, yoksa gösterir. Anahtar gibidir.
+            $("#toggle").click(function(){ 
+                $("#yazi").toggle("fast"); // "fast" -> Hızlıca yap
+            });
+
+
+            // --- SLIDE (KAYDIRMA) EFEKTLERİ (EKSTRA BİLGİ) ---
+            // Mantık yukarıdakilerle aynıdır:
+            // .slideUp()   -> Yukarı doğru kayarak gizler
+            // .slideDown() -> Aşağı doğru kayarak açar
+            // .slideToggle() -> Kayarak aç/kapa yapar
+            // --- FADE (SOLAĞAÇIKLIK) EFEKTLERİ (EKSTRA BİLGİ) ---
+            // .fadeIn()   -> Yavaşça görünür yapar
+            // .fadeOut()  -> Yavaşça görünmez yapar
+            // .fadeToggle() -> Yavaşça aç/kapa yapar
+        });
+    </script>
+
+  </body>
+</html>

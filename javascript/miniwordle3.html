@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basit Wordle </title>
+    
+    <style>
+        body {
+            background-color: #121213;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 { margin: 0; }
+        #restart-btn {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        #restart-btn:hover { background-color: #ddd; }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(5, 55px);
+            grid-template-rows: repeat(6, 55px);
+            gap: 5px;
+        }
+
+        .kutu {
+            border: 2px solid #3a3a3c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .yesil { background-color: #538d4e; border-color: #538d4e; }
+        .sari  { background-color: #b59f3b; border-color: #b59f3b; }
+        .gri   { background-color: #3a3a3c; border-color: #3a3a3c; }
+        
+        #mesaj { margin: 15px 0; font-size: 18px; font-weight: bold; color: orange; height: 25px; }
+
+        #klavye {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+        }
+        .satir { display: flex; gap: 4px; }
+        .tus {
+            background-color: #818384;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            width: 35px; /* Tuş genişliği */
+            height: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tus:active { background-color: #565758; } /* Tıklama efekti */
+        .genis { width: 55px; font-size: 12px; } /* Enter ve Sil tuşları geniş olsun */
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>WORDLE TÜRKÇE</h1>
+        <button id="restart-btn" onclick="oyunuSifirla()">Yeniden Oyna</button>
+    </header>
+    
+    <div id="grid"></div>
+    <div id="mesaj"></div>
+
+    <div id="klavye"></div>
+
+    <script>
+        // --- 1. AYARLAR VE KELİME HAVUZU ---
+        // YENİ: 20 Kelimelik Havuz
+        const kelimeListesi = [
+            "KALEM", "KİTAP", "RADYO", "SEHPA", "DOLAP", 
+            "ÇORAP", "BALIK", "KAŞIK", "TABAK", "BİLET",
+            "CEVİZ", "DAVUL", "EKMEK", "FENER", "GÜNEŞ",
+            "HELVA", "ISLIK", "JİLET", "KABAK", "LİMON"
+        ];
+
+        let hedefKelime = "";
+        const satirSayisi = 6;
+        const sutunSayisi = 5;
+
+        let suankiSatir = 0;
+        let suankiKutu = 0;
+        let oyunBitti = false;
+
+
+        gridOlustur();
+        klavyeOlustur();
+        yeniKelimeSec();
+
+        // Rastgele Kelime Seçme Fonksiyonu ---
+        function yeniKelimeSec() {
+            // Math.random() rastgele kelime al
+            hedefKelime = kelimeListesi[Math.floor(Math.random() * kelimeListesi.length)];
+            console.log("Hedef Kelime (Kopya): " + hedefKelime); 
+        }
+
+        // GRID OLUŞTURMA ---
+        function gridOlustur() {
+            const gridDiv = document.getElementById("grid");
+            gridDiv.innerHTML = ""; // Temiz null bbıraktık
+            
+            for (let i = 0; i < satirSayisi * sutunSayisi; i++) {
+                let kutu = document.createElement("div");
+                kutu.classList.add("kutu");
+                kutu.id = "kutu-" + i;
+                gridDiv.appendChild(kutu);
+            }
+        }
+
+        // KLAVYE OLUŞTURMA FONKSİYONU ---
+        function klavyeOlustur() {
+            const klavyeDiv = document.getElementById("klavye");
+            const harfler = [
+                ["E", "R", "T", "Y", "U", "I", "O", "P", "Ğ", "Ü"],
+                ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ş", "İ"],
+                ["ENTER", "Z", "C", "V", "B", "N", "M", "Ö", "Ç", "SIL"]
+            ];
+
+            harfler.forEach(satir => {
+                let satirDiv = document.createElement("div");
+                satirDiv.classList.add("satir");
+
+                satir.forEach(harf => {
+                    let btn = document.createElement("button");
+                    btn.innerText = harf === "SIL" ? "⌫" : harf; // Sil için simge
+                    btn.classList.add("tus");
+                    
+                    if (harf === "ENTER" || harf === "SIL") {
+                        btn.classList.add("genis"); // Geniş tuş stili
+                    }
+
+                    // Tıklama Olayı: Bu tuşa basınca ne olsun?
+                    btn.onclick = () => islemYap(harf);
+                    
+                    satirDiv.appendChild(btn);
+                });
+                klavyeDiv.appendChild(satirDiv);
+            });
+        }
+
+        // --- 4. GİRDİ YÖNETİMİ (Klavye ve Fare Ortak) ---
+        // Hem fiziksel klavye hem de ekrandaki klavye burayı kullanır
+        function islemYap(tus) {
+            if (oyunBitti) return;
+
+            if (tus === "ENTER") {
+                tahminiKontrolEt();
+            } else if (tus === "SIL" || tus === "BACKSPACE") {
+                harfSil();
+            } else {
+                // Sadece harf ise yaz
+                harfYaz(tus);
+            }
+        }
+
+  
+        // --- 5. OYUN FONKSİYONLARI ---
+
+        function harfYaz(harf) {
+            if (suankiKutu < 5) {
+                let kutuIndex = (suankiSatir * 5) + suankiKutu;
+                document.getElementById("kutu-" + kutuIndex).innerText = harf;
+                suankiKutu++;
+            }
+        }
+
+        function harfSil() {
+            if (suankiKutu > 0) {
+                suankiKutu--;
+                let kutuIndex = (suankiSatir * 5) + suankiKutu;
+                document.getElementById("kutu-" + kutuIndex).innerText = "";
+            }
+        }
+
+        function tahminiKontrolEt() {
+            if (suankiKutu < 5) {
+                document.getElementById("mesaj").innerText = "5 harf girmelisiniz!";
+                setTimeout(() => document.getElementById("mesaj").innerText = "", 2000);
+                return;
+            }
+
+            let tahmin = "";
+            let baslangic = suankiSatir * 5;
+
+            // Kelimeyi topla
+            for (let i = 0; i < 5; i++) {
+                tahmin += document.getElementById("kutu-" + (baslangic + i)).innerText;
+            }
+
+            // Renklendirme
+            for (let i = 0; i < 5; i++) {
+                let kutu = document.getElementById("kutu-" + (baslangic + i));
+                let harf = tahmin[i];
+
+                if (harf === hedefKelime[i]) kutu.classList.add("yesil");
+                else if (hedefKelime.includes(harf)) kutu.classList.add("sari");
+                else kutu.classList.add("gri");
+            }
+
+            // Sonuç Kontrol
+            if (tahmin === hedefKelime) {
+                document.getElementById("mesaj").innerText = "TEBRİKLER! 🏆";
+                oyunBitti = true;
+            } else {
+                if (suankiSatir === 5) {
+                    document.getElementById("mesaj").innerText = "BİLEMEDİN! Kelime: " + hedefKelime;
+                    oyunBitti = true;
+                } else {
+                    suankiSatir++;
+                    suankiKutu = 0;
+                }
+            }
+        }
+
+        // --- YENİ: YENİDEN OYNA (RESTART) ---
+        function oyunuSifirla() {
+            // Değişkenleri sıfırla
+            suankiSatir = 0;
+            suankiKutu = 0;
+            oyunBitti = false;
+            document.getElementById("mesaj").innerText = "";
+
+            // Grid'i temizle ve yeniden oluştur (Renkleri silmek için en kolay yol)
+            gridOlustur(); 
+            
+            // Yeni kelime seç
+            yeniKelimeSec();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Click Event Dersleri</title>
+
+    <style>
+        /* CSS Bölümü: Sayfanın makyajı */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Normal paragraflar için stil */
+        p {
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer; /* Üzerine gelince el işareti çıksın */
+            margin-bottom: 10px;
+        }
+
+        /* JavaScript ile sonradan ekleyeceğimiz sınıf */
+        .paragrafrenk {
+            color: red;           /* Yazı rengi kırmızı */
+            font-size: 25px;      /* Yazı boyutu büyür */
+            font-weight: bold;    /* Kalın yazı */
+            border-color: red;    /* Çerçeve de kırmızı olsun */
+            background-color: #fff0f0; /* Hafif kırmızı arka plan */
+            transition: all 0.4s ease; /* Değişim yumuşak olsun (Animasyon) */
+        }
+    </style>
+</head>
+<body>
+
+    <h3>jQuery Click Event (Tıklama Olayları)</h3>
+    <p>Aşağıdaki kutulara tıklayarak test et:</p>
+
+    <p id="p1">1. ID ile Seçim (#p1) - Tıklayınca Uyarı Verir</p>
+    <p id="p2">2. ID ile Seçim (#p2) - Henüz boş, işlem atanmadı</p>
+    <p class="paragraf">3. Class ile Seçim (.paragraf) - Tıklayınca Değişir</p>
+    <p class="paragraf">4. Class ile Seçim (.paragraf) - Tıklayınca Değişir</p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        /* !!! DÜZELTİLEN HATA !!!
+           Kanka, önceki kodunda şu aşağıda yazdığımız kodları <script> etiketleri 
+           arasına almadan direkt body'ye yazmıştın. 
+           
+           Tarayıcı <script> etiketi görmediği sürece yazdığın her şeyi 
+           ekrana basılacak "düz yazı" zanneder ve kod çalışmaz.
+           Artık hepsi <script> içinde olduğu için sorun yok.
+        */
+
+        // $(document).ready(...) -> Sayfa tamamen yüklendiğinde çalış demektir.
+        // Kısa yazımı: $(function(){ ... }); şeklindedir. İkisi de aynı kapıya çıkar.
+        $(document).ready(function(){
+            
+            console.log("Sayfa Hazır! (ready fonksiyonu çalıştı)");
+
+            // -------------------------------------------------------
+            // ÖRNEK 1: ID SEÇİCİ İLE TIKLAMA (#p1)
+            // -------------------------------------------------------
+            $("#p1").click(function(){
+                // Sadece id="p1" olan elemente tıklayınca burası çalışır.
+                alert("p1 ID'li paragrafa tıkladın!");
+            });
+
+            // -------------------------------------------------------
+            // ÖRNEK 2: CLASS SEÇİCİ VE $(this) KULLANIMI (.paragraf)
+            // -------------------------------------------------------
+            $(".paragraf").click(function(){
+                
+                // $(this) NEDİR?
+                // Sayfada birden fazla ".paragraf" var. Hepsini aynı anda değiştirmek istemiyoruz.
+                // $(this) -> "O an hangisine tıkladıysam SADECE ONU etkile" demektir.
+                //  this yerine .paragraf yazarsak, tüm .paragraf class'lı elementler etkilenir.
+                
+                // addClass -> CSS'teki .paragrafrenk özelliklerini bu elemente ekler.
+                $(this).addClass("paragrafrenk");
+
+                // İPUCU: Eğer tekrar tıklayınca eski haline dönsün istersen:
+                // $(this).toggleClass("paragrafrenk"); 
+                // satırını kullanabilirsin. (toggle = aç/kapa anahtarı)
+                
+                console.log("Bir paragrafa tıklandı ve rengi değişti.");
+            });
+
+        }); // ready fonksiyonu bitişi
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Master Eğitim Notları</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      
+      /* .highlight sınıfı: Eklendiği elementin arka planını sarı yapar. */
+      .highlight {
+        background-color: yellow;
+      }
+      
+      /* Resimler için stil */
+      img {
+        max-width: 100%; /* Resim kapsayıcıdan taşmasın */
+        border-radius: 8px;
+        transition: all 0.3s ease; /* Yumuşak geçiş efekti */
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">Örnek Link</a>
+    <h3 id="header">Jquery Dersleri (Başlık 1)</h3>
+    <h3 id="header1">Jquery Dersleri 1 (Başlık 2)</h3>
+
+    <ul id="liste">
+      <li class="item">Jquery Reference</li>
+      <li>Selectors <a href="#">link</a></li>
+      <li class="item">Jquery Plugins</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      // 1. ID SEÇİCİ (#): #liste olanı seçer
+      console.log($("#liste"));
+
+      // 2. ETİKET SEÇİCİ: Tüm h3'leri seçer
+      console.log($("h3"));
+
+      // 3. CSS DEĞİŞTİRME:
+      // #header1 id'li başlığın rengini turuncu yap
+      $("#header1").css("color", "orange");
+
+      // Zincirleme stil verme (Chaining)
+      $("#liste a").css("text-decoration", "none").css("color", "green");
+
+      // Toplu stil verme (Obje ile)
+      var styles = {
+        color: "blue",
+        fontWeight: "bold"
+      };
+      // DİKKAT: Aşağıdaki JavaScript döngüsü bu stili ezebilir!
+      $("ul li").css(styles);
+
+      // --- VANILLA JS İLE EZME ÖRNEĞİ ---
+      // Bu kod, jQuery'den sonra çalışırsa li renkleri kırmızıya döner.
+      var listeler = document.querySelectorAll("li");
+      for (var i = 0; i < listeler.length; i++) {
+        listeler[i].style.color = "red";
+      }
+
+      // .item class'ına sahip olanları gizle (display: none)
+      $(".item").css("display", "none");
+    </script>
+
+    <hr />
+
+    <h3>Bölüm 2: İçerik Okuma ve Yazma</h3>
+    
+    <h1 id="anaBaslik">Jquery Helper Methods</h1>
+
+    <input type="text" id="genelInput" placeholder="Genel Input" />
+
+    <script>
+        // .text() -> Metin içeriğini değiştirir
+        $("#anaBaslik").text("Başlık jQuery ile Güncellendi!");
+
+        // .val() -> Input değerini değiştirir
+        $("#genelInput").val("Otomatik Dolduruldu");
+    </script>
+
+    <hr />
+
+    <h3>Bölüm 3: Form ve Tıklama Olayları</h3>
+
+    <input type="text" id="ad" placeholder="Adınız" />
+    <input type="text" id="soyad" class="highlight" placeholder="Soyadınız" />
+    
+    <button id="btnKaydet">Kaydet ve Class Değiştir</button>
+
+    <script>
+        // Tıklama Olayı (.click)
+        $("#btnKaydet").click(function() {
+            var ad = $("#ad").val();
+            var soyad = $("#soyad").val();
+            console.log("Kayıt: " + ad + " " + soyad);
+
+            // .addClass() -> Class ekler (Yeşil çerçeve gibi stil ekleyebilirsin)
+            $("#ad").addClass("highlight");
+
+            // .toggleClass() -> Varsa siler, yoksa ekler (Aç/Kapa)
+            $("#soyad").toggleClass("highlight");
+            
+            alert("İşlem yapıldı: " + ad + " " + soyad);
+        });
+    </script>
+
+    <hr />
+
+    <h3>Bölüm 4: Görsel (Image) İşlemleri ve .attr()</h3>
+    <p>Resim özelliklerini değiştirmek için butonları kullan.</p>
+
+    <img id="manzara" src="https://picsum.photos/id/10/300/200" alt="Manzara Resmi" style="border: 2px solid #333;">
+    
+    <br><br>
+
+    <div style="margin-bottom: 50px;">
+        <button id="btnBuyut">Genişliği Arttır</button>
+        <button id="btnKucult">Genişliği Azalt</button>
+        <button id="btnDegistir">Resmi Değiştir (.attr)</button>
+        <button id="btnFade">Efekt (Fade)</button>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        
+        // --- 1. Genişlik Değiştirme (.width) ---
+        $("#btnBuyut").click(function() {
+          var mevcutGenislik = $("#manzara").width(); 
+          // 50px ekle
+          $("#manzara").width(mevcutGenislik + 50);
+          console.log("Yeni Genişlik: " + $("#manzara").width());
+        });
+
+        $("#btnKucult").click(function() {
+            var mevcut = $("#manzara").width();
+            if(mevcut > 100) { 
+                $("#manzara").width(mevcut - 50);
+            }
+        });
+
+        // --- 2. Özellik Değiştirme (.attr) ---
+        // src (kaynak), alt, href, title gibi özellikleri değiştirir.
+        $("#btnDegistir").click(function() {
+            // Resmi değiştir
+            $("#manzara").attr("src", "https://picsum.photos/id/20/300/200");
+            $("#manzara").attr("alt", "Yeni Resim");
+            alert("Resim kaynağı (src) değiştirildi!");
+        });
+
+        // --- 3. Efektler (.fadeToggle) ---
+        // Görseli yumuşakça gizler veya gösterir.
+        $("#btnFade").click(function() {
+            $("#manzara").fadeToggle(1000);
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

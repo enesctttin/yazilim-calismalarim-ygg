@@ -1,0 +1,51 @@
+﻿@model Category
+
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">  
+            <h2 class="text-primary">Edit Category</h2>
+            <hr />
+        </div>
+
+        @* <div asp-validation-summary="All"></div>  @* bütün hataları yukarıda verecek*@ 
+        @* inline errorlar yeterli olduğu için yukarısını yoruma aldık*@
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>  @*  bu nu controller daki creaate ksımındaki Isvalid kısmı için yaptık*@
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="DisplayOrder"></label>
+            <input asp-for="DisplayOrder" class="form-control" />
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>  @*  bu nu controller daki creaate ksımındaki Isvalid kısmı için yaptık*@
+
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
+
+@* 
+@model Category: View ile Model'i birbirine bağladığımız o sihirli ilk satır. Bu sayfanın Category sınıfı için çalıştığını söylüyor.
+
+method="post": Form gönderildiğinde, Controller'daki [HttpPost] etiketli Create metodunu tetikleyecek.
+
+asp-for="Name": Tag Helper'larımız devrede! Hem label (etiket) hem de input (girdi kutusu) otomatik olarak Model'inizdeki Name özelliğine bağlanıyor.
+
+asp-controller ve asp-action: "Back to List" butonuna basıldığında Category içindeki Index (listeleme) sayfasına geri dönmemizi sağlıyor. *@
+
+
+
+@*partial view için*@
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+

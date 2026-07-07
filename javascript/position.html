@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Dersleri</title>
+    
+    <style>
+        /* GENEL SAYFA STİLLERİ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            /* Scroll (kaydırma) efekti belli olsun diye sayfayı bilerek uzattım */
+            height: 2000px; 
+            padding-bottom: 100px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            color: #2c3e50;
+        }
+
+        p { color: #555; }
+
+        /* KUTU STİLLERİ (Görünüm için) */
+        .kutu {
+            width: 150px;
+            height: 100px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+
+        /* ================================================================
+           1. POSITION: STATIC (VARSAYILAN / DEFAULT)
+           ================================================================
+           Her element doğuştan static'tir. 
+           Özellik: top, left, right, bottom komutlarını DİNLEMEZ.
+           Akışa göre alt alta veya yan yana dizilirler.
+        */
+        .static-kutu {
+            background-color: #95a5a6; /* Gri */
+            position: static; /* Yazmasan da default budur */
+        }
+
+        /* ================================================================
+           2. POSITION: RELATIVE (GÖRECELİ)
+           ================================================================
+           Özellik: Elementi olduğu yerden kımıldatır AMA eski yerini korur.
+           Yani hayaleti orada kalır, diğer elementler o boşluğu doldurmaz.
+           Ayrıca: "Absolute" çocukların referans noktası olur (Burası çok önemli).
+        */
+        .relative-kutu {
+            background-color: #f39c12; /* Turuncu */
+            position: relative;
+            
+            /* Olduğu yerden 30px soldan it, 20px yukarıdan it */
+            left: 50px; 
+            top: 20px;
+            z-index: 10; /* Diğer kutuların üstüne çıksın diye */
+        }
+
+        /* ================================================================
+           3. POSITION: ABSOLUTE (MUTLAK / BAĞIMSIZ)
+           ================================================================
+           Özellik: Bu element sayfa akışından tamamen kopar (Uçan element olur).
+           Diğer elementler sanki o yokmuş gibi davranır.
+           
+           KRİTİK KURAL: Absolute bir element, "position: relative" verilmiş
+           en yakın atasını (parent) referans alır. Eğer ata yoksa tarayıcıyı (body) referans alır.
+        */
+        
+        /* Önce bir kapsayıcı (baba) yapalım ve ona relative diyelim */
+        .baba-kapsayici {
+            position: relative; /* Çocuğu içine hapsetmek için şart! */
+            width: 400px;
+            height: 200px;
+            background-color: #fff;
+            border: 3px dashed #333;
+            margin-top: 20px;
+        }
+
+        .absolute-cocuk {
+            background-color: #e74c3c; /* Kırmızı */
+            position: absolute;
+            
+            /* Babanın sağ alt köşesine yapış */
+            bottom: 10px;
+            right: 10px;
+            
+            width: 120px; /* Boyutunu biraz küçültelim */
+            height: 80px;
+        }
+
+        /* ================================================================
+           4. POSITION: FIXED (SABİT)
+           ================================================================
+           Özellik: Ekranı kaydırsan (scroll) bile bu element EKRANA YAPIŞIK kalır.
+           Web sitelerindeki "Canlı Destek" butonları veya "Yukarı Çık" butonları böyledir.
+           Referansı her zaman tarayıcı penceresidir (Viewport).
+        */
+        .fixed-kutu {
+            background-color: #27ae60; /* Yeşil */
+            position: fixed;
+            
+            /* Ekranın sağ altına sabitle */
+            bottom: 20px;
+            right: 20px;
+            
+            width: 100px;
+            height: 50px;
+            border-radius: 25px;
+            z-index: 9999; /* En üstte görünsün */
+            cursor: pointer;
+            text-align: center;
+            line-height: 50px; /* Yazıyı ortalamak için */
+            box-shadow: 0 0 15px rgba(39, 174, 96, 0.6);
+        }
+
+        /* ================================================================
+           5. POSITION: STICKY (YAPIŞKAN)
+           ================================================================
+           Özellik: Melezdir. Hem relative hem fixed gibi davranır.
+           Sayfa kayarken normal durur, ama belirlediğin noktaya (top: 0 gibi) gelince
+           orada asılı kalır (yapışır).
+           Genelde Menü (Navbar) sabitlemek için kullanılır.
+        */
+        .sticky-kutu {
+            background-color: #8e44ad; /* Mor */
+            position: sticky; /* Safari için -webkit-sticky gerekebilir */
+            
+            /* Tavana değdiği an orada kal */
+            top: 0; 
+            
+            width: 100%; /* Tam genişlik */
+            border-radius: 0;
+            z-index: 100;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 3px solid #6c3483;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="kutu sticky-kutu">
+        Ben STICKY (Yapışkanım) <br> Aşağı kaydırınca tavana yapışırım!
+    </div>
+
+    <h1>CSS Position Uygulamalı Anlatım</h1>
+    <p>Aşağı kaydırdıkça kutuların davranışlarını incele.</p>
+
+    <h2>1. Static (Varsayılan)</h2>
+    <p>Normal akış. Top, left gibi komutları dinlemez.</p>
+    <div class="kutu static-kutu">Static 1</div>
+    <div class="kutu static-kutu">Static 2</div>
+    <div class="kutu static-kutu">Static 3</div>
+
+    <h2>2. Relative (Göreceli)</h2>
+    <p>Bulunduğu yerden kaydırılır ama <b>eski yeri boş kalır</b>.</p>
+    <div class="kutu static-kutu">Normal Kutu</div>
+    <div class="kutu relative-kutu">Relative (Kaydırıldı)</div>
+    <div class="kutu static-kutu">Normal Kutu</div>
+
+    <h2>3. Absolute (Mutlak) - <small>En Önemlisi!</small></h2>
+    <p>Aşağıdaki kesikli çizgili kutu <b>relative</b> bir babadır. İçindeki kırmızı kutu ise <b>absolute</b> çocuktur.</p>
+    <p>Kırmızı kutu babasının sınırları içinde sağ alta gönderilmiştir.</p>
+    
+    <div class="baba-kapsayici">
+        Ben Baba (Relative)
+        <div class="kutu absolute-cocuk">
+            Ben Çocuk (Absolute)
+        </div>
+    </div>
+
+    <div class="fixed-kutu">
+        FIXED 📌
+    </div>
+
+    <div style="margin-top: 50px;">
+        <h3>Aşağıya Doğru Kaydır 👇</h3>
+        <p>Fixed kutunun (Yeşil) hep sağ altta kaldığını ve Sticky kutunun (Mor) üstte asılı kaldığını gör.</p>
+        <br><br><br><br><br><br><br><br><br><br>
+        <p>Kaydırmaya devam...</p>
+        <br><br><br><br><br><br><br><br><br><br>
+        <p>Burası sayfa sonu.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\bin\Debug\net8.0\My_phone_book.exe
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\bin\Debug\net8.0\My_phone_book.deps.json
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\bin\Debug\net8.0\My_phone_book.runtimeconfig.json
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\bin\Debug\net8.0\My_phone_book.dll
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\bin\Debug\net8.0\My_phone_book.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\My_phone_book.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\My_phone_book.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\My_phone_book.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\My_phone_book.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\My_phone_book.dll
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\refint\My_phone_book.dll
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\My_phone_book.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\My_phone_book.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\Ygy\c#\My_phone_book\My_phone_book\obj\Debug\net8.0\ref\My_phone_book.dll

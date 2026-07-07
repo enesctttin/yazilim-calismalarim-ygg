@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\denemesql\\denemesql\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|solutionrelative:denemesql\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\denemesql\\denemesql\\controllers\\academicianscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|solutionrelative:denemesql\\controllers\\academicianscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\denemesql\\denemesql\\controllers\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|solutionrelative:denemesql\\controllers\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\denemesql\\denemesql\\controllers\\academiciandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|solutionrelative:denemesql\\controllers\\academiciandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\denemesql\\denemesql\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|solutionrelative:denemesql\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\denemesql\\denemesql\\models\\academician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8109571-3579-D5A6-1666-03B61D255354}|denemeSql\\denemeSql.csproj|solutionrelative:denemesql\\models\\academician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "denemeSql\\Models\\Course.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Models\\Course.cs",
+              "RelativeToolTip": "denemeSql\\Models\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:11:41.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Academician.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Models\\Academician.cs",
+              "RelativeDocumentMoniker": "denemeSql\\Models\\Academician.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Models\\Academician.cs",
+              "RelativeToolTip": "denemeSql\\Models\\Academician.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:11:07.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AcademicianDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Controllers\\AcademicianDTO.cs",
+              "RelativeDocumentMoniker": "denemeSql\\Controllers\\AcademicianDTO.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Controllers\\AcademicianDTO.cs",
+              "RelativeToolTip": "denemeSql\\Controllers\\AcademicianDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:10:35.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Controllers\\StudentDTO.cs",
+              "RelativeDocumentMoniker": "denemeSql\\Controllers\\StudentDTO.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Controllers\\StudentDTO.cs",
+              "RelativeToolTip": "denemeSql\\Controllers\\StudentDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:06:39.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "denemeSql\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "denemeSql\\Controllers\\CoursesController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:06:37.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AcademiciansController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Controllers\\AcademiciansController.cs",
+              "RelativeDocumentMoniker": "denemeSql\\Controllers\\AcademiciansController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\denemeSql\\denemeSql\\Controllers\\AcademiciansController.cs",
+              "RelativeToolTip": "denemeSql\\Controllers\\AcademiciansController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAIwCMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T19:06:35.337Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

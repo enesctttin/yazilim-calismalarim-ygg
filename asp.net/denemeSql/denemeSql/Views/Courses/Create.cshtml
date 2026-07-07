@@ -1,0 +1,28 @@
+﻿@model denemeSql.Models.Course
+
+<h2>Yeni Ders Ekle</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            
+            <div class="form-group mb-3">
+                <label class="control-label">Ders Adı</label>
+                <input asp-for="Title" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label">Dersi Verecek Akademisyen</label>
+                <select asp-for="AcademicianId" class="form-control" asp-items="ViewBag.AcademiciansList">
+                    <option value="">-- Lütfen Bir Akademisyen Seçiniz --</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-success" />
+            </div>
+
+        </form>
+    </div>
+</div>

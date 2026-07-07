@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Wordle</title>
+    
+    <style>
+        /* Sayfanın genel ayarları */
+        body {
+            background-color: #121213; /* Wordle'ın o meşhur koyu arka planı */
+            color: white; /* Yazılar beyaz olsun ki okunsun */
+            font-family: sans-serif; /* Düz, modern bir yazı tipi */
+            display: flex; /* İçindekileri hizalamak için Flexbox kullanıyoruz */
+            flex-direction: column; /* Alt alta dizilsinler (Başlık, Oyun, Mesaj) */
+            align-items: center; /* Her şeyi ortala */
+            margin-top: 50px; /* Üstten biraz boşluk bırak */
+        }
+
+        h1 { margin-bottom: 20px; }
+
+        /* OYUN ALANI (Izgara Yapısı) */
+        #grid {
+            /* CSS Grid: Kutuları düzenli dizmek için en iyi yöntem */
+            display: grid;
+            /* 5 Sütun olacak, her biri 60 piksel genişliğinde */
+            grid-template-columns: repeat(5, 60px); 
+            /* 6 Satır olacak, her biri 60 piksel yüksekliğinde */
+            grid-template-rows: repeat(6, 60px);    
+            gap: 5px; /* Kutular arasına 5 piksel boşluk koy */
+        }
+
+        /* KUTULARIN GENEL GÖRÜNÜMÜ */
+        .kutu {
+            border: 2px solid #3a3a3c; /* Koyu gri çerçeve */
+            display: flex; /* Harfi kutunun tam ortasına koymak için */
+            justify-content: center; /* Yatayda ortala */
+            align-items: center; /* Dikeyde ortala */
+            font-size: 30px; /* Harf boyutu */
+            font-weight: bold; /* Kalın yazı */
+            text-transform: uppercase; /* Küçük harf yazsan bile BÜYÜK göster */
+        }
+
+        /* --- RENKLER (Oyunun Kalbi) --- */
+        /* Bu sınıfları JavaScript ile duruma göre ekleyip çıkaracağız */
+        .yesil { 
+            background-color: #538d4e; /* Doğru harf, doğru yer */
+            border-color: #538d4e; 
+        }
+        .sari { 
+            background-color: #b59f3b; /* Harf var ama yeri yanlış */
+            border-color: #b59f3b; 
+        }
+        .gri { 
+            background-color: #3a3a3c; /* Harf kelimede yok */
+            border-color: #3a3a3c; 
+        }
+        
+        /* Kazandın/Kaybettin Mesajı */
+        #mesaj { 
+            margin-top: 20px; 
+            font-size: 20px; 
+            font-weight: bold; 
+            color: orange; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BASİT WORDLE</h1>
+    
+    <div id="grid"></div>
+
+    <div id="mesaj"></div>
+
+    <script>
+        // ==========================================
+        // 1. AYARLAR VE DEĞİŞKENLER (DURUM YÖNETİMİ)
+        // ==========================================
+        const hedefKelime = "KALEM"; // Bulunması gereken gizli kelime
+        const satirSayisi = 6;       // Kaç deneme hakkı var?
+        const sutunSayisi = 5;       // Kelime kaç harfli?
+
+        let suankiSatir = 0; // Hangi satırdayız? (0'dan başlar, 5'e kadar gider)
+        let suankiKutu = 0;  // O satırda hangi kutudayız? (0-4 arası)
+        let oyunBitti = false; // Oyun bitti mi kontrolü
+
+        // ==========================================
+        // 2. BAŞLANGIÇ: KUTULARI OLUŞTURMA
+        // ==========================================
+        // HTML'deki "grid" kutusunu seçiyoruz
+        const gridDiv = document.getElementById("grid");
+
+        // 30 tane kutuyu tek tek HTML'e yazmak amelelik olurdu.
+        // O yüzden Döngü (For Loop) ile otomatik üretiyoruz.
+        for (let i = 0; i < satirSayisi * sutunSayisi; i++) {
+            let kutu = document.createElement("div"); // Yeni bir <div> yarat
+            kutu.classList.add("kutu"); // Ona CSS'teki .kutu sınıfını ver
+            kutu.id = "kutu-" + i;      // Kimlik ver (kutu-0, kutu-1, ... kutu-29)
+            gridDiv.appendChild(kutu);  // Sayfaya ekle
+        }
+
+        // ==========================================
+        // 3. KLAVYE DİNLEME (OLAYLAR)
+        // ==========================================
+        // Kullanıcının klavyesine bastığı anı yakalıyoruz
+        document.addEventListener("keydown", (olay) => {
+            
+            if (oyunBitti) return; // Oyun bittiyse hiçbir şey yapma, dur.
+
+            let tus = olay.key.toUpperCase(); // Basılan tuşu büyüt (örn: 'a' -> 'A')
+
+            // Türkçe karakter sorununu çözme (i -> İ yapmak için)
+            if (olay.key === "i") tus = "İ"; 
+
+            // --- HANGİ TUŞA BASILDI? ---
+            if (tus === "ENTER") {
+                // Eğer Enter'a bastıysa kelimeyi kontrol et
+                tahminiKontrolEt();
+            } 
+            else if (tus === "BACKSPACE") {
+                // Eğer Silme tuşuna bastıysa harf sil
+                harfSil();
+            } 
+            // Aşağıdaki Regex: "Sadece A-Z arası harfler ve Türkçe karakterler" demek.
+            // Ayrıca tus.length === 1 diyerek F1, Shift, Ctrl gibi tuşları engelliyoruz.
+            else if (tus.length === 1 && tus.match(/[A-ZÇĞİÖŞÜ]/)) {
+                harfYaz(tus);
+            }
+        });
+
+        // ==========================================
+        // 4. TEMEL FONKSİYONLAR (MANTIK)
+        // ==========================================
+
+        // --- HARF YAZMA FONKSİYONU ---
+        function harfYaz(harf) {
+            // Eğer o satırda 5 harf dolmadıysa yazmaya izin ver
+            if (suankiKutu < 5) {
+                // Matematiği şöyle: (Bulunduğumuz Satır x 5) + Sıradaki Kutu
+                // Örnek: 1. Satırın 2. kutusu aslında 7. kutudur (1*5 + 2 = 7)
+                let kutuIndex = (suankiSatir * 5) + suankiKutu;
+                
+                // O kutuyu HTML'den bul
+                let kutu = document.getElementById("kutu-" + kutuIndex);
+                
+                kutu.innerText = harf; // Harfi kutunun içine koy
+                suankiKutu++;          // İmleci bir sağa kaydır
+            }
+        }
+
+        // --- HARF SİLME FONKSİYONU ---
+        function harfSil() {
+            // Eğer silebilecek bir harf varsa (0'dan büyükse)
+            if (suankiKutu > 0) {
+                suankiKutu--; // İmleci bir sola kaydır
+                let kutuIndex = (suankiSatir * 5) + suankiKutu;
+                let kutu = document.getElementById("kutu-" + kutuIndex);
+                kutu.innerText = ""; // Kutunun içini temizle
+            }
+        }
+
+        // --- TAHMİN KONTROL ETME (ANA ALGORİTMA) ---
+        function tahminiKontrolEt() {
+            // 5 harf dolmadan Enter'a basarsa uyar
+            if (suankiKutu < 5) {
+                alert("Lütfen 5 harf giriniz!");
+                return; // Fonksiyondan çık, devam etme
+            }
+
+            // 1. Yazılan kelimeyi kutulardan toplayıp birleştir
+            let tahmin = "";
+            let baslangicIndex = suankiSatir * 5; // O satırın başlangıç numarası
+
+            for (let i = 0; i < 5; i++) {
+                let kutu = document.getElementById("kutu-" + (baslangicIndex + i));
+                tahmin += kutu.innerText; // Harfleri uca ekle (K + A + L + E + M)
+            }
+
+            // 2. RENKLENDİRME DÖNGÜSÜ (Yeşil, Sarı, Gri)
+            for (let i = 0; i < 5; i++) {
+                let kutu = document.getElementById("kutu-" + (baslangicIndex + i));
+                let harf = tahmin[i]; // Tahmin edilen harf
+                
+                // MANTIK BURADA:
+                if (harf === hedefKelime[i]) {
+                    // Harf var VE yeri de doğru -> YEŞİL
+                    kutu.classList.add("yesil");
+                } else if (hedefKelime.includes(harf)) {
+                    // Harf kelimenin içinde bir yerlerde var -> SARI
+                    kutu.classList.add("sari");
+                } else {
+                    // Harf hiç yok -> GRİ
+                    kutu.classList.add("gri");
+                }
+            }
+
+            // 3. KAZANMA / KAYBETME KONTROLÜ
+            if (tahmin === hedefKelime) {
+                // Bildiyse
+                document.getElementById("mesaj").innerText = "TEBRİKLER! KAZANDINIZ 🏆";
+                oyunBitti = true; // Oyunu kilitle
+            } else {
+                // Bilemediyse
+                if (suankiSatir === 5) {
+                    // Son hakkıysa ve bilemediyse KAYBETTİ
+                    document.getElementById("mesaj").innerText = "KAYBETTİNİZ! Kelime: " + hedefKelime;
+                    oyunBitti = true;
+                } else {
+                    // Hakkı varsa devam et
+                    suankiSatir++;   // Bir alt satıra geç
+                    suankiKutu = 0;  // Sütunu tekrar başa al (0)
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+HTML iskelet
+
+css renki toplu olur 
+
+bootstrap kütüphene ortak (html css javascript ) hazır butonlar githup
+
+javascript back end ve front end  her yerde kullanılır 
+
+Jquery  javascript kutuphanesi 
+
+Frontend ( ön yüz ) 
+
+web sitesinde kullanıcın gördüğü yer 
+
+kullanıcı bir butona bastığında back ende gidebilmesi gerekir 
+
+belirli bir medthoda gider o kod çalışır 
+ 
+
+backend (arka yüz)
+
+veri tabanına gider 
+
+Live server local sunucunuz üzerinde yapmış olduğunuz websiteyi deploy etmeye ayağa kaldırmaya yarayan server
+oluşturulan dosyaların uzantısı htlm olmalıdır örnek dosya.htlm . dan sonrası
+new file ile yeni doysa oluştur sağ tık ile seçenekler denenerek açılır reveal in file expoler
+
+EMMET
+https://docs.emmet.io/cheat-sheet/ 
+! 
+Html sayfamızın minumum seviyedeki gerekli kod yapıları oluşolur
+
+h1 enes çetin web sayfasına enes çetin yazdırır local IP adresi verir tarayıcın arama kısmındaki
+local host = 127.0.0.1
+
+DOCTYPE ile başlıyor doküman tipi html 
+html lang "eng" dil gösteririr göstermesede olur 
+düz html yazılabilir
+tag(etiket)
+html tagı ile başalar <html> ,  </html> tagı ile kapatılır  çerçeve görevi görür 
+
+head tagı açılır html çerçevesinin içinde oda çerveve şeklinde <head>, </head>     /n head içinde title  genel bilgilendirme meta etiket harici olarak css dosyaları bağlama bilgilendirme ufak işler yapılır
+
+meta web sayfalarını bilgilendirmek şu şu özelliklere sahip olucak bir tag meta nın bitişi yok meta boşluk ctrl space  öz nitelik attritibute açar 
+
+<meta charset="UTF-8"> Türkçe karakter izin verir
+
+responsive  web sitesinin telefon ve bilgisayarda farklı görünmesini sağlar 
+
+name content iki adet alt başlık var
+
+/n yeni meta
+name="kaywords" content elma
+tarayıcıda keywords  ile content maplaniyor böylece anahtar kelimeler ile eşleşiyor öne çıkırayor böylece web sitesi ne üzerine ise ona content ler verilir 
+/n yeni meta  
+
+description  content   
+
+content altında açıklama çıkarıyor web sitesine girmeden tarayıcıda okuma yapmaya yarıyor
+
+
+title çerçeve olucak web sitenin adı <title> ammo </title>
+
+body çerçeve  web sayfasının içeriği burada kendi tagları var 
+
+body yazılan herşey ekrana yansır
+
+
+html yorum satırları 
+	<!--  yorum satırı açma	
+
+Kısayollar
+crtl + S = kayıt		
+
+Alt + Shift +F =kodları düzenlemek 
+
+Ctrl+ Alt + aşağı veya yukarı ok= imleci yukarı veya aşağı büyütüyor (birden fazla satır seçmene yardımcı olur)
+
+alt +yukarı aşağı ok tuşu= satırı kaydırmak için Ctrl+c sonra ctrl+v yapmaya gerek kalmaz
+
+fn +sağ ok sol ok satır sonuna gider 
+
+Yazıyı seçip ctrl + D  aynı diğer yazıları da seçiyor çoklu seçim
+
+ctrl +shift+k =satırı silmek
+
+ctrl enter=yeni satır
+
+
+ 
+
+

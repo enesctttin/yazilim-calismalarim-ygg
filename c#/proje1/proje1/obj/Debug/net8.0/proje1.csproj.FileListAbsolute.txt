@@ -1,0 +1,14 @@
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\bin\Debug\net8.0\proje1.exe
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\bin\Debug\net8.0\proje1.deps.json
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\bin\Debug\net8.0\proje1.runtimeconfig.json
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\bin\Debug\net8.0\proje1.dll
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\bin\Debug\net8.0\proje1.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\proje1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\proje1.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\proje1.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\proje1.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\proje1.dll
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\refint\proje1.dll
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\proje1.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\proje1.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\Ygy\c#\proje1\proje1\obj\Debug\net8.0\ref\proje1.dll

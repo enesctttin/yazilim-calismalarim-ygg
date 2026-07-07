@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display </title>
+
+    <style>
+        .kutu {
+
+            background-color: red;
+            display: inline-block;
+            height: 300px;
+            width: 300px;
+        }
+
+        .kutu2 {
+            margin-left: 100px;
+            background-color:aqua;
+            display: inline-block;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 
+    1- inline   sadece kendi alanını kaplıyorsa
+    2- block    bütün paragarafı kaplıyorsa
+    3- inline-block    
+-->
+    <p>paragraf</p>
+
+    <a href="">link </a>
+    <br> <br> 
+    <!-- block inline inline block çevrilebilir sytle display yapılır -->
+
+    <!--  inline etiket de genişilik ve yükseklik verilemez 
+      verilsede birşey değişmez -->
+    <p style="display: inline; height: 500px;
+    width: 60px;">paragraf</p>
+
+    <a href="">link </a>
+
+    <!--inline-block inline- block için style da display inline-block secilmeli  -->
+
+    <div class="kutu"></div>
+
+    <div class="kutu2"></div>
+
+</body>
+
+</html>

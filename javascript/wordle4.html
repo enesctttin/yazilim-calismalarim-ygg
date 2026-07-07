@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle (HTML Yapılı)</title>
+    
+    <style>
+        body {
+            background-color: #121213;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 { margin: 0; letter-spacing: 2px; }
+
+        /* BUTONLAR */
+        button { cursor: pointer; border: none; font-weight: bold; }
+        
+        #restart-btn {
+            background-color: white;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        #restart-btn:hover { background-color: #ddd; }
+
+        /* OYUN ALANI (GRID) */
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(5, 55px);
+            grid-template-rows: repeat(6, 55px);
+            gap: 5px;
+        }
+
+        .kutu {
+            border: 2px solid #3a3a3c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* RENKLER */
+        .yesil { background-color: #538d4e; border-color: #538d4e; }
+        .sari  { background-color: #b59f3b; border-color: #b59f3b; }
+        .gri   { background-color: #3a3a3c; border-color: #3a3a3c; }
+        
+        #mesaj { margin: 15px 0; font-size: 18px; font-weight: bold; color: orange; height: 25px; }
+
+        /* KLAVYE */
+        #klavye {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+        }
+        .satir { display: flex; gap: 4px; }
+        
+        .tus {
+            background-color: #818384;
+            color: white;
+            border-radius: 4px;
+            width: 35px;
+            height: 50px;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tus:active { background-color: #565758; }
+        .genis { width: 55px; font-size: 12px; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>WORDLE TR</h1>
+        <button id="restart-btn" onclick="oyunuSifirla()">Yeniden Oyna</button>
+    </header>
+    
+    <div id="grid">
+        <div id="kutu-0" class="kutu"></div>
+        <div id="kutu-1" class="kutu"></div>
+        <div id="kutu-2" class="kutu"></div>
+        <div id="kutu-3" class="kutu"></div>
+        <div id="kutu-4" class="kutu"></div>
+        
+        <div id="kutu-5" class="kutu"></div>
+        <div id="kutu-6" class="kutu"></div>
+        <div id="kutu-7" class="kutu"></div>
+        <div id="kutu-8" class="kutu"></div>
+        <div id="kutu-9" class="kutu"></div>
+
+        <div id="kutu-10" class="kutu"></div>
+        <div id="kutu-11" class="kutu"></div>
+        <div id="kutu-12" class="kutu"></div>
+        <div id="kutu-13" class="kutu"></div>
+        <div id="kutu-14" class="kutu"></div>
+
+        <div id="kutu-15" class="kutu"></div>
+        <div id="kutu-16" class="kutu"></div>
+        <div id="kutu-17" class="kutu"></div>
+        <div id="kutu-18" class="kutu"></div>
+        <div id="kutu-19" class="kutu"></div>
+
+        <div id="kutu-20" class="kutu"></div>
+        <div id="kutu-21" class="kutu"></div>
+        <div id="kutu-22" class="kutu"></div>
+        <div id="kutu-23" class="kutu"></div>
+        <div id="kutu-24" class="kutu"></div>
+
+        <div id="kutu-25" class="kutu"></div>
+        <div id="kutu-26" class="kutu"></div>
+        <div id="kutu-27" class="kutu"></div>
+        <div id="kutu-28" class="kutu"></div>
+        <div id="kutu-29" class="kutu"></div>
+    </div>
+
+    <div id="mesaj"></div>
+
+    <div id="klavye">
+        <div class="satir">
+            <button class="tus" onclick="islemYap('E')">E</button>
+            <button class="tus" onclick="islemYap('R')">R</button>
+            <button class="tus" onclick="islemYap('T')">T</button>
+            <button class="tus" onclick="islemYap('Y')">Y</button>
+            <button class="tus" onclick="islemYap('U')">U</button>
+            <button class="tus" onclick="islemYap('I')">I</button>
+            <button class="tus" onclick="islemYap('O')">O</button>
+            <button class="tus" onclick="islemYap('P')">P</button>
+            <button class="tus" onclick="islemYap('Ğ')">Ğ</button>
+            <button class="tus" onclick="islemYap('Ü')">Ü</button>
+        </div>
+        <div class="satir">
+            <button class="tus" onclick="islemYap('A')">A</button>
+            <button class="tus" onclick="islemYap('S')">S</button>
+            <button class="tus" onclick="islemYap('D')">D</button>
+            <button class="tus" onclick="islemYap('F')">F</button>
+            <button class="tus" onclick="islemYap('G')">G</button>
+            <button class="tus" onclick="islemYap('H')">H</button>
+            <button class="tus" onclick="islemYap('J')">J</button>
+            <button class="tus" onclick="islemYap('K')">K</button>
+            <button class="tus" onclick="islemYap('L')">L</button>
+            <button class="tus" onclick="islemYap('Ş')">Ş</button>
+            <button class="tus" onclick="islemYap('İ')">İ</button>
+        </div>
+        <div class="satir">
+            <button class="tus genis" onclick="islemYap('ENTER')">ENTER</button>
+            <button class="tus" onclick="islemYap('Z')">Z</button>
+            <button class="tus" onclick="islemYap('C')">C</button>
+            <button class="tus" onclick="islemYap('V')">V</button>
+            <button class="tus" onclick="islemYap('B')">B</button>
+            <button class="tus" onclick="islemYap('N')">N</button>
+            <button class="tus" onclick="islemYap('M')">M</button>
+            <button class="tus" onclick="islemYap('Ö')">Ö</button>
+            <button class="tus" onclick="islemYap('Ç')">Ç</button>
+            <button class="tus genis" onclick="islemYap('SIL')">⌫</button>
+        </div>
+    </div>
+
+    <script>
+        const kelimeListesi = [
+            "KALEM", "KİTAP", "RADYO", "SEHPA", "DOLAP", 
+            "ÇORAP", "BALIK", "KAŞIK", "TABAK", "BİLET",
+            "CEVİZ", "DAVUL", "EKMEK", "FENER", "GÜNEŞ",
+            "HELVA", "ISLIK", "JİLET", "KABAK", "LİMON"
+        ];
+
+        let hedefKelime = "";
+        const satirSayisi = 6;
+        const sutunSayisi = 5;
+
+        let suankiSatir = 0;
+        let suankiKutu = 0;
+        let oyunBitti = false;
+
+        // Sayfa açılınca bir kelime 
+        yeniKelimeSec();
+
+        function yeniKelimeSec() {
+            hedefKelime = kelimeListesi[Math.floor(Math.random() * kelimeListesi.length)];
+            console.log("Hedef Kelime: " + hedefKelime); 
+        }
+
+        // HTML'deki butonlar burayı çağırıyor
+        function islemYap(tus) {
+            if (oyunBitti) return;
+
+            if (tus === "ENTER") {
+                tahminiKontrolEt();
+            } else if (tus === "SIL") {
+                harfSil();
+            } else {
+                harfYaz(tus);
+            }
+        }
+
+        function harfYaz(harf) {
+            if (suankiKutu < 5) {
+                // HTML'de ID'leri elle verdiğimiz için doğrudan buluyoruz
+                let kutuIndex = (suankiSatir * 5) + suankiKutu;
+                document.getElementById("kutu-" + kutuIndex).innerText = harf;
+                suankiKutu++;
+            }
+        }
+
+        function harfSil() {
+            if (suankiKutu > 0) {
+                suankiKutu--;
+                let kutuIndex = (suankiSatir * 5) + suankiKutu;
+                document.getElementById("kutu-" + kutuIndex).innerText = "";
+            }
+        }
+
+        function tahminiKontrolEt() {
+            // 5 Harf doldu mu?
+            if (suankiKutu < 5) {
+                document.getElementById("mesaj").innerText = "5 harf girmelisiniz!";
+                setTimeout(() => document.getElementById("mesaj").innerText = "", 2000);
+                return;
+            }
+
+            let tahmin = "";
+            let baslangic = suankiSatir * 5;
+
+            // Kelimeyi topla
+            for (let i = 0; i < 5; i++) {
+                tahmin += document.getElementById("kutu-" + (baslangic + i)).innerText;
+            }
+
+            // Renklendirme
+            for (let i = 0; i < 5; i++) {
+                let kutu = document.getElementById("kutu-" + (baslangic + i));
+                let harf = tahmin[i];
+
+                if (harf === hedefKelime[i]) kutu.classList.add("yesil");
+                else if (hedefKelime.includes(harf)) kutu.classList.add("sari");
+                else kutu.classList.add("gri");
+            }
+
+            // Sonuç
+            if (tahmin === hedefKelime) {
+                document.getElementById("mesaj").innerText = "TEBRİKLER! 🏆";
+                oyunBitti = true;
+            } else {
+                if (suankiSatir === 5) { // Son hak bitti
+                    document.getElementById("mesaj").innerText = "BİLEMEDİN! Kelime: " + hedefKelime;
+                    oyunBitti = true;
+                } else {
+                    suankiSatir++;
+                    suankiKutu = 0;
+                }
+            }
+        }
+
+        function oyunuSifirla() {
+            // Değişkenleri sıfırla
+            suankiSatir = 0;
+            suankiKutu = 0;
+            oyunBitti = false;
+            document.getElementById("mesaj").innerText = "";
+
+            // HTML'i Temizle (Artık Grid'i silip baştan oluşturmuyoruz, sadece içini siliyoruz)
+            for(let i=0; i<30; i++) {
+                let kutu = document.getElementById("kutu-" + i);
+                kutu.innerText = "";
+                kutu.className = "kutu"; // Renk sınıflarını (yesil, sari) siler, sadece "kutu" kalır
+            }
+            
+            yeniKelimeSec();
+        }
+
+    </script>
+</body>
+</html>

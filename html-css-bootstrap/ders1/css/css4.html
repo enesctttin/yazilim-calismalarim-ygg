@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .kutu {
+            background-color: lightblue;
+             width: 50%;    /* yüzde olarak verilirse tarayıcı ekranda ne kadar gözüküyorsa o orana göre ayarlar kendini tablet veya telefon moduna geçilirse lazım  */
+            height: 300px;
+
+            /* kalınlığı tipi rengi */
+            border: 7px solid red;
+        }
+
+
+        .kutu2 {
+            background-color: lightblue;
+            width: 200px;
+            height: 200px;
+            border-radius: 25%;
+            /* kalınlığı tipi rengi */
+            border: 7px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- border ve radius kullanımı    border cerceve ekler   radius ovallik katar-->
+    <!-- 
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border
+hidden - Defines a hidden border
+-->
+
+    <div class="kutu">
+
+    </div>
+
+    <div class="kutu2">
+
+    </div>
+
+
+</body>
+
+<!--  div içinde div açılırsa  oluşan çerceveyi bir daha çerceveler   -->
+<div class="kutu">
+    <div class="kutu2">
+
+    </div>
+</div>
+
+
+
+
+
+</html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1 id="bas">enes</h1>
+
+    <p>none</p>
+
+    <input type="text" id="ii" />
+
+    <h3>getting start</h3>
+
+    <p id="cereal">id</p>
+    <p class="unicycle">class</p>
+
+    <div class="unicycle">this div have class</div>
+
+    <button>clcik me</button>
+
+    <hr />
+    <hr />
+    <hr />
+
+    <p>just uour normal stence</p>
+
+    <hr />
+    <hr />
+
+    <input type="text" />
+
+    <hr />
+    <hr />
+
+    <h2>Arkaplan Rengini Seç:</h2>
+
+    <select id="renkSec">
+      <option value="white">Beyaz</option>
+      <option value="red">Kırmızı</option>
+      <option value="lightblue">Mavi</option>
+      <option value="lightgreen">Yeşil</option>
+      <option value="yellow">Sarı</option>
+    </select>
+
+    <p>Rengi seçtiğin an arka plan değişecek.</p>
+    <hr />
+    <hr />
+    <hr />
+    <p>
+      Öğrenmek için:
+      <a href="https://www.google.com" id="fcc" target="_blank">Google'a Git</a>
+    </p>
+
+    <p id="test">Bu yazı değişecek.</p>
+
+    <p>İsim: <input type="text" id="name" value="Mehmet" /></p>
+
+    <hr />
+
+    <button id="btn1">1. Linki Göster (.attr)</button>
+    <button id="btn2">2. Yazıyı Değiştir (.html)</button>
+    <button id="btn3">3. İsmi Değiştir (.val)</button>
+
+    <hr />
+    <hr />
+    <hr />
+
+    <h3>Bir şeyler yaz:</h3>
+    <input type="text" id="mesajKutusu" />
+
+    <h3>Canlı Sonuç:</h3>
+    <p id="sonuc" style="color: blue; font-size: 20px">...</p>
+
+    <hr />
+    <hr />
+    <hr />
+
+    <script>
+      var ad = "sadik";
+
+      console.log(ad.length);
+
+      let kullan = [
+        { ad: "enes", yas: 22 },
+        { ad: "kamil", yas: 60 },
+      ];
+
+      console.table(kullan);
+
+      b = Math.random();
+      console.log(b);
+
+      let dizi = [1, 2, 3, 4, 5];
+      dizi.push(7);
+      p = dizi.pop();
+
+      console.log(dizi);
+      console.log(p);
+
+      let u = document.getElementById("bas");
+
+      u.innerText = "yeni";
+
+      let k = document.getElementById("ii");
+
+      k.value = 10;
+    </script>
+
+    <script>
+      //   $(selector).action();
+      // when document is ready that time run
+      //  $(document).ready(function(){   yerine $(function(){ ...  });
+      // buda kullanılabilir.
+      $(document).ready(function () {
+        $("button").click(function () {
+          $("p").hide();
+        });
+
+        $(".unicycle").click(function () {
+          console.log("you clcick a unicycle");
+        });
+      });
+
+      // id ye erişeceğin zaman #  class ise .
+    </script>
+
+    <script>
+      // hover takes two func and combination of mouse enter and mouse leave methıds
+      // $(function(){...}) is the shorter way to write $(document).ready(...)
+      $(function () {
+        $("p").hover(
+          // Function 1: Mouse Enter
+          function () {
+            console.log("you entered");
+            // Visual feedback: Change color to red
+            $(this).css("color", "red");
+            $(this).css("background-color", "#f0f0f0");
+          },
+          // Function 2: Mouse Leave
+          function () {
+            console.log("you left");
+            // Visual feedback: Change color back to black
+            $(this).css("color", "black");
+            $(this).css("background-color", "white");
+          },
+        );
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        // --- FOCUS OLAYI (ODAKLANMA) ---
+        // NEDEN KULLANIRIZ?
+        // 1. Kullanıcıya "Şu an buraya yazıyorsun" demek için görsel ipucu veririz.
+        // 2. Kullanıcı kutuya girdiği an, yardım mesajı (tooltip) gösterebiliriz.
+        $("input").focus(function () {
+          // Arkaplanı sarı yap ki kullanıcı aktif kutuyu anlasın
+          $(this).css("background-color", "#fff3cd");
+
+          // Kenarlığı kalınlaştır ve turuncu yap (Dikkat çeksin)
+          $(this).css("border", "2px solid orange");
+
+          console.log("Kullanıcı şu an bir kutuya odaklandı.");
+        });
+
+        // --- BLUR OLAYI (ODAKTAN ÇIKMA) ---
+        // NEDEN KULLANIRIZ?
+        // 1. Kullanıcı işini bitirip başka yere tıkladığında kutuyu eski haline döndürmek için.
+        // 2. Doğrulama (Validation) yapmak için: Mesela "Şifre çok kısa" uyarısını kutudan çıkınca veririz.
+        $("input").blur(function () {
+          // Kutudan çıkınca rengi tekrar beyaza döndür (Temizle)
+          $(this).css("background-color", "white");
+
+          // Kenarlığı normale döndür
+          $(this).css("border", "1px solid #ccc");
+
+          console.log("Kullanıcı kutudan çıktı (blur).");
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        // --- CHANGE (DEĞİŞTİRME) ---
+        // Neden kullanıyoruz?
+        // Çünkü kullanıcı menüden "Yeni bir şey seçtiğinde" haberimiz olsun istiyoruz.
+        // Click deseydik, daha seçimi yapmadan menüyü açtığı an çalışırdı, işe yaramazdı.
+
+        $("#renkSec").change(function () {
+          // 1. Kullanıcının seçtiği rengi (value) alıyoruz
+          var secilenRenk = $(this).val();
+
+          // 2. Sayfanın arka planını o renk yapıyoruz
+          $("body").css("background-color", secilenRenk);
+
+          console.log("Renk şuna döndü: " + secilenRenk);
+        });
+      });
+    </script>
+
+    <!-- 1. .attr() (Attribute / Özellik)
+HTML etiketlerinin içindeki özellikleri (href, src, id, class, type) okumak veya değiştirmek için kullanılır.
+
+Okumak için: $("#link").attr("href") -> Linkin nereye gittiğini söyler.
+
+Değiştirmek için: $("#link").attr("href", "google.com") -> Linki Google'a yönlendirir.
+
+2. .html() (İçerik)
+Bir elementin içindeki her şeyi (yazılar + diğer HTML etiketleri) alır veya değiştirir.
+
+Farkı ne? .text() sadece düz yazıyı alırken, .html() eğer içeride <b>kalın</b> gibi etiketler varsa onları da işler.
+
+Görselde <b>awesome!</b> yazarak yazıyı kalın yapmış.
+
+3. .val() (Value / Değer)
+Form elemanları (input, textarea, select) için kullanılır. Kutunun içinde ne yazdığını anlamak veya değiştirmek içindir.
+
+Okumak için: $("#isim").val() -> Kutuda ne yazıyor?
+
+Değiştirmek için: $("#isim").val("Ahmet") -> Kutuya "Ahmet" yaz.
+
+ALTIN KURAL (Ezberlemesi Çok Kolay)
+jQuery'de mantık hep aynıdır:
+
+Parantez BOŞSA () -> OKUR (Getir).
+
+Parantez DOLUYSA ("...") -> YAZAR (Değiştir). -->
+
+    <script>
+      $(document).ready(function () {
+        // 1. .attr() Örneği
+        $("#btn1").click(function () {
+          // Parantez boş, yani OKUYORUZ
+          var linkAdresi = $("#fcc").attr("href");
+          alert("Link şuraya gidiyor: " + linkAdresi);
+
+          // İstersek değiştirebiliriz de:
+          // $("#fcc").attr("href", "https://youtube.com");
+        });
+
+        // 2. .html() Örneği
+        $("#btn2").click(function () {
+          // Parantez dolu, yani YAZIYORUZ (Değiştiriyoruz)
+          // İçine <b> etiketi koyduk, tarayıcı bunu kalın yapar.
+          $("#test").html("Bak yazı değişti ve <b>KALIN</b> oldu!");
+        });
+
+        // 3. .val() Örneği
+        $("#btn3").click(function () {
+          // Input'un içindeki değeri değiştiriyoruz
+          $("#name").val("Quincy Larson");
+        });
+      });
+    </script>
+
+    <!-- .keyup() (Tuşu Bırakınca)
+Mantık: Sen klavyede tuşa basıp elini kaldırdığın an çalışır.
+ Örnek: Sen kutuya ne yazarsan, aynısını aşağıya yazdıracağız. -->
+    <script>
+      $(document).ready(function () {
+        // Tuştan elini çektiğin an çalışır
+        $("#mesajKutusu").keyup(function () {
+          // 1. Kutudaki yazıyı al
+          var yazilan = $(this).val();
+
+          // 2. Aşağıdaki p etiketine yazdır
+          $("#sonuc").text(yazilan);
+        });
+      });
+    </script>
+
+    <!-- .submit() (Form Gönderme)
+Olay: "Gönder" butonuna bastığında veya "Enter"a bastığında çalışır. 
+Dikkat: Bu olay Butona değil, FORM etiketine yazılır. -->
+
+    <script>
+      $(document).ready(function () {
+        // Form gönderilmeye çalışıldığında...
+        $("#girisFormu").submit(function (event) {
+          // BU ÇOK ÖNEMLİ: Sayfanın yenilenmesini engeller!
+          // Bunu yazmazsan sayfa yenilenir, yazdığını göremezsin.
+          event.preventDefault();
+
+          alert("Form başarıyla gönderildi kanka!");
+        });
+      });
+    </script>
+  </body>
+</html>

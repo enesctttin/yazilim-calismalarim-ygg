@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow Özellikleri</title>
+    <style>
+        .box {
+            background-color: lightgrey;
+            width: 250px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 5px;
+        }
+
+        .visible {
+            overflow: visible;
+        }
+
+        .hidden {
+            overflow: hidden;
+        }
+
+        .scroll {
+            overflow: scroll;
+        }
+
+        .auto {
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Overflow Özellikleri</h1>
+
+    <!--   yükseklik verlidiği zaman olur
+    overflow özelliği aslında şunları kontrol eder:
+
+    visible (varsayılan) → Taşan içerik görünür.
+
+    hidden → Taşan kısım gizlenir.  
+
+    scroll → Her zaman kaydırma çubuğu çıkar.   auto kullanmak daha mantıklı
+
+    auto → İçerik taşarsa kaydırma çubuğu çıkar, sığarsa çıkmaz.
+     -->
+
+
+
+
+    <h3>overflow: visible (varsayılan)</h3>
+    <div class="box visible">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam at id aliquid atque aspernatur esse dolor!
+        Totam, quidem nisi quia sequi cum laborum vel, ducimus iste ratione optio at recusandae!
+    </div>
+
+    <h3>overflow: hidden</h3>
+    <div class="box hidden">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam at id aliquid atque aspernatur esse dolor!
+        Totam, quidem nisi quia sequi cum laborum vel, ducimus iste ratione optio at recusandae!
+    </div>
+
+    <h3>overflow: scroll</h3>
+    <div class="box scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam at id aliquid atque aspernatur esse dolor!
+        Totam, quidem nisi quia sequi cum laborum vel, ducimus iste ratione optio at recusandae!
+    </div>
+
+    <h3>overflow: auto</h3>
+    <div class="box auto">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam at id aliquid atque aspernatur esse dolor!
+        Totam, quidem nisi quia sequi cum laborum vel, ducimus iste ratione optio at recusandae!
+    </div>
+</body>
+
+</html>

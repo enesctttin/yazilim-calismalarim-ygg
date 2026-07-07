@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Yeni Ürün Ekle</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f7f6; }
+        .form-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 350px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
+        input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        .btn-submit { background-color: #28a745; color: white; border: none; padding: 12px; width: 100%; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .btn-submit:hover { background-color: #218838; }
+        .back-link { display: block; margin-top: 20px; text-decoration: none; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Yeni Ürün Ekle</h2>
+        
+        @* FORM BURADA BAŞLIYOR *@
+        <form asp-controller="Products" asp-action="Create" method="post">
+            <div class="form-group">
+                <label>Ürün ID</label>
+                <input type="number" name="Id" required />
+            </div>
+            <div class="form-group">
+                <label>Ürün Adı</label>
+                <input type="text" name="Name" required />
+            </div>
+            <div class="form-group">
+                <label>Fiyat (₺)</label>
+                <input type="number" name="Price" required />
+            </div>
+            <div class="form-group">
+                <label>Stok Adedi</label>
+                <input type="number" name="Stock" required />
+            </div>
+
+            <button type="submit" class="btn-submit">Sisteme Kaydet</button>
+        </form>
+
+        <a href="/Products" class="back-link">← Menüye Geri Dön</a>
+    </div>
+
+</body>
+</html>

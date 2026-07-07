@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\views\\categoriestemp\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\views\\categoriestemp\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\views\\categoriestemp\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\views\\categoriestemp\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\views\\categoriestemp\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\views\\categoriestemp\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\views\\categoriestemp\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\views\\categoriestemp\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\views\\categoriestemp\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\views\\categoriestemp\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|c:\\users\\asus\\desktop\\ygg\\asp.net\\bulkybook\\bulkybookweb\\models\\categoriestempcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12B9127B-7FC5-5E71-AAFD-3B4ECDCFD278}|BulkyBookWeb\\BulkyBookWeb.csproj|solutionrelative:bulkybookweb\\models\\categoriestempcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "BulkyBookWeb\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAADwv4UAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:55:26.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "BulkyBookWeb\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:55:25.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Edit.cshtml",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Views\\CategoriesTemp\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Edit.cshtml",
+              "RelativeToolTip": "BulkyBookWeb\\Views\\CategoriesTemp\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T18:36:30.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Details.cshtml",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Views\\CategoriesTemp\\Details.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Details.cshtml",
+              "RelativeToolTip": "BulkyBookWeb\\Views\\CategoriesTemp\\Details.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T18:36:29.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Index.cshtml",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Views\\CategoriesTemp\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Index.cshtml",
+              "RelativeToolTip": "BulkyBookWeb\\Views\\CategoriesTemp\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T18:36:31.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Delete.cshtml",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Views\\CategoriesTemp\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Delete.cshtml",
+              "RelativeToolTip": "BulkyBookWeb\\Views\\CategoriesTemp\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T18:36:28.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Create.cshtml",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Views\\CategoriesTemp\\Create.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Views\\CategoriesTemp\\Create.cshtml",
+              "RelativeToolTip": "BulkyBookWeb\\Views\\CategoriesTemp\\Create.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T18:36:27.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoriesTempController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Models\\CategoriesTempController.cs",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Models\\CategoriesTempController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Models\\CategoriesTempController.cs",
+              "RelativeToolTip": "BulkyBookWeb\\Models\\CategoriesTempController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:35:28.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "BulkyBookWeb\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ygg\\asp.net\\BulkyBook\\BulkyBookWeb\\Models\\Category.cs",
+              "RelativeToolTip": "BulkyBookWeb\\Models\\Category.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T18:35:16.471Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

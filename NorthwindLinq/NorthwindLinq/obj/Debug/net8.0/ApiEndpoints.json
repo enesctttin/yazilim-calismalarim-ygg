@@ -1,0 +1,193 @@
+[
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetBolum4NullSorgulari",
+    "RelativePath": "api/Northwind/bolum_null",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetBolum10SartliSorgular",
+    "RelativePath": "api/Northwind/bolum10-when-case",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetBolum11GroupBySorgulari",
+    "RelativePath": "api/Northwind/bolum11-group-by",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetBolum12JoinSorgulari",
+    "RelativePath": "api/Northwind/bolum12-join-islemleri",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "getleft_rigth_join",
+    "RelativePath": "api/Northwind/bolum13-left-right-join",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "getbolum14advanced",
+    "RelativePath": "api/Northwind/bolum14-having-subquery",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetBolum2WhereSorgulari",
+    "RelativePath": "api/Northwind/bolum2-filtreleme-where",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "Getand_or",
+    "RelativePath": "api/Northwind/bolum3",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetShippers1",
+    "RelativePath": "api/Northwind/kargolari-getir-1",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetShippers2",
+    "RelativePath": "api/Northwind/kargolari-getir-2",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetShippers3",
+    "RelativePath": "api/Northwind/kargolari-getir-3",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetShippers4",
+    "RelativePath": "api/Northwind/kargolari-getir-4",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "getselect17",
+    "RelativePath": "api/Northwind/select-17den",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "get22_bass",
+    "RelativePath": "api/Northwind/select-22den",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "gettselect32",
+    "RelativePath": "api/Northwind/select32_denbasliyor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "gtttiing42",
+    "RelativePath": "api/Northwind/select42den",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindController.Controllers.NorthwindController",
+    "Method": "GetSqlTest",
+    "RelativePath": "api/Northwind/sql-nasil-olmus-testi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NorthwindLinq.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[NorthwindLinq.WeatherForecast, NorthwindLinq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

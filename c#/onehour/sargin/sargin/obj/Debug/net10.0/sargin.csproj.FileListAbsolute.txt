@@ -1,0 +1,14 @@
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\bin\Debug\net10.0\sargin.exe
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\bin\Debug\net10.0\sargin.deps.json
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\bin\Debug\net10.0\sargin.runtimeconfig.json
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\bin\Debug\net10.0\sargin.dll
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\bin\Debug\net10.0\sargin.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\sargin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\sargin.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\sargin.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\sargin.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\sargin.dll
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\refint\sargin.dll
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\sargin.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\sargin.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\Ygy\c#\onehour\sargin\sargin\obj\Debug\net10.0\ref\sargin.dll

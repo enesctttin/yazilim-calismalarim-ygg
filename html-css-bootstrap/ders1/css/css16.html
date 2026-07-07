@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown menu </title>
+    <style>
+        ul{
+            list-style-type: none;
+
+        }
+        ul li{
+            padding: 4px;
+         background-color: lightblue;
+         display: inline-block;
+
+        }
+        ul li :hover{
+            background-color: greenyellow;
+            transition: 0.5s;
+        }
+        ul li a{
+            text-decoration: none;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            display: inline-block; 
+            /* inline elementi block yaptık böylece üzerine gelinildiği zaman satırın hepsi renklenecek */
+        }
+
+        ul li:nth-child(1){
+            background-color: brown;
+        }
+
+        #news-content{
+            position: absolute;
+            z-index: 1;
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- navigation bar  menü (dikey)  -->
+    <ul>
+        <li><a href="#">Home</a></li>
+        
+        <li>
+            <a href="#">News</a>
+        
+            <div id="news-content"> 
+                <ul>
+                    <li style="display: block;"><a href="">1</a></li>
+                    <li style="display: block;"><a href="">2</a></li>
+                    <li style="display: block;"><a href="">3</a></li>
+                    <li style="display: block;"><a href="">4</a></li>
+
+                </ul>
+
+            </div>
+
+        </li>
+
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+
+
+</body>
+    <!-- display inline-block yaparsak yatay menü yapmış oluruz -->
+</html>
+
+
+
+<!-- Normal menü öğelerimiz var (Home, News, Contact, About).
+
+Bir öğenin (örneğin News) altına başka bir gizli <ul> listesi koyuyoruz.
+
+CSS ile bu alt listeyi display: none; yapıyoruz.
+
+Kullanıcı News üzerine gelince (hover), alt liste görünür hale geliyor (display: block;).
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menü</title>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: lightblue;
+    }
+
+    ul li {
+      display: inline-block; /* yatay menü */
+      position: relative;    /* alt menüyü bunun içine bağlamak için */
+    }
+
+    ul li a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    ul li:hover {
+      background-color: greenyellow;
+      transition: 0.3s;
+    }
+
+    /* dropdown kısmı */
+    ul li ul {
+      display: none;            /* gizli */
+      position: absolute;       /* üst menüye bağlı */
+      top: 100%;                /* altına yerleştir */
+      left: 0;
+      background-color: lightblue;
+      min-width: 150px;
+    }
+
+    ul li ul li {
+      display: block; /* alt menü dikey olur */
+    }
+
+    ul li:hover ul {
+      display: block; /* üzerine gelince göster */
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li>
+      <a href="#">News ▾</a>
+      <ul>
+        <li><a href="#">Tech</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Politics</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</body>
+
+</html>
+ -->

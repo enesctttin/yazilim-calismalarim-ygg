@@ -1,0 +1,56 @@
+﻿@* BURASI ÇOK ÖNEMLİ: Garsonun (Controller) gönderdiği tek bir ürünü burada karşılıyoruz *@
+@model deneme.Models.Product
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ürün Güncelle</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f0f4f8; }
+        .form-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 350px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #2c3e50; }
+        input { width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 4px; box-sizing: border-box; }
+        /* ID alanını değiştirmesinler diye hafif gri yapıyoruz */
+        input[readonly] { background-color: #edf2f7; cursor: not-allowed; }
+        .btn-update { background-color: #007bff; color: white; border: none; padding: 12px; width: 100%; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .btn-update:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Ürünü Düzenle</h2>
+
+        <form asp-controller="Products" asp-action="Edit" method="post">
+            
+            <div class="form-group">
+                <label>Ürün ID (Değiştirilemez)</label>
+                @* value="@Model.Id" sayesinde kutucuğun içine eski ID yazılır *@
+                <input type="number" name="Id" value="@Model.Id" readonly />
+            </div>
+
+            <div class="form-group">
+                <label>Ürün Adı</label>
+                @* value="@Model.Name" sayesinde kutucuğun içine eski Ad yazılır *@
+                <input type="text" name="Name" value="@Model.Name" required />
+            </div>
+
+            <div class="form-group">
+                <label>Fiyat (₺)</label>
+                <input type="number" name="Price" value="@Model.Price" required />
+            </div>
+
+            <div class="form-group">
+                <label>Stok Adedi</label>
+                <input type="number" name="Stock" value="@Model.Stock" required />
+            </div>
+
+            <button type="submit" class="btn-update">Değişiklikleri Kaydet</button>
+        </form>
+
+        <a href="/Products" style="display:block; margin-top:20px; text-decoration:none; color:#3182ce;">← İptal Et ve Dön</a>
+    </div>
+
+</body>
+</html>

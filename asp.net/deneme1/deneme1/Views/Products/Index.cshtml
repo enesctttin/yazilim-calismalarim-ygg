@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+@model List<Product>
+
+
+
+<h1>Index</h1>
+
+
+    <a asp-controller="products" asp-action="add">
+        ekle
+    </a>
+
+
+
+
+<table class="table" >
+
+    <thead>
+        <tr>
+        <th>  ID   </th>
+        <th>   İsim  </th>
+        <th>   Fiyat   </th>
+        <th>   Stok  </th>
+        <th>
+
+          islem
+        </th>
+        </tr>
+
+    </thead>
+
+
+    <tbody></tbody>
+
+    @foreach (var item in Model)
+    {
+     
+        <tr>
+
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Stock</td>
+            <td> <a asp-controller="products" asp-action="remove" asp-route-id="@item.Id">
+                sil burada -id="@item.Id" yerine name göndermek istersek -name item.name yapmalıyız</a> </td>
+            <td>
+                <a asp-controller="products" asp-action="update" asp-route-id="@item.Id">
+                    güncelle
+                </a>
+            </td>
+
+        </tr>
+
+        
+
+
+    }
+
+</tbody>
+
+
+</table>
+
+
+

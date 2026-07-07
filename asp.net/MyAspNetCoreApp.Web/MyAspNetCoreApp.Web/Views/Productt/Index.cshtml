@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<Productt>
+
+<h1>Ürünler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Fiyat</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @* tbody burada başlar *@
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Stock</td>
+            </tr>
+        }
+    </tbody> @* tbody döngü bittikten sonra burada kapanır *@
+</table>

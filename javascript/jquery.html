@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">link</a>
+    <h3 id="header">Jquery Dersleri</h3>
+    <h3 id="header1">Jquery Dersleri 1</h3>
+
+    <ul id="liste">
+      <li class="item">Jquery Reference</li>
+      <li>Selectors <a href="#">link</a></li>
+      <li class="item">Jquery Plugins</li>
+    </ul>
+
+    <!-- jquery kütüphanesini çağırmak için  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // selectors kullanımı
+      // id seçici ile listeyi seçmek için
+      console.log($("#liste"));
+      //   h3 etiketini seçmek için
+      console.log($("h3"));
+      //   ul altındaki li etiketlerini seçmek için
+      console.log($("ul li"));
+
+    </script>
+
+    <script>
+      // JavaScript ile css kullanımı
+      document.getElementById("header").style.color = "red";
+
+      // Jquery ile css kullanımı
+      $("#header1").css("color", "yellow");
+
+      $("#liste a").css("text-decoration", "none").css("color", "green");
+
+      var styles = {
+        color: "yellow",
+        fontSize: "20px",
+        border: "1px solid red",
+      };
+      //  burayı yorum satırı al sonra çaıştır yukarı jquery
+      $("ul li").css(styles);
+
+      var listeler = document.querySelectorAll("li");
+
+      for (var i = 0; i < listeler.length; i++) {
+        listeler[i].style.color = "red";
+      }
+
+      $("a").css({
+        color: "yellow",
+        fontSize: "20px",
+        border: "1px solid red",
+      });
+
+      $(".item").css({
+        display: "none",
+      });
+    </script>
+
+    <hr />
+    <hr />
+    <hr />
+
+    <h1>Jquery Helper Methods</h1>
+
+    <ul>
+      <li>Jquery Selectors</li>
+      <li>Jquery Methods</li>
+      <li>Jquery Animations</li>
+    </ul>
+
+    <input type="text" placeholder="FullName" />
+
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+
+    <input type="text" id="ad" placeholder="Adınız" />
+    <input type="text" id="soyad" class="highlight" placeholder="Soyadınız" />
+    <button id="btnKaydet" onclick="adsoyad()">Kaydet</button>
+
+    <script>
+      console.log($("h1").text());
+
+      console.log($("ul").text());
+
+      console.log($("ul li").text());
+
+      //  text() methodu ile içerik değiştirme
+      $("h1").text("ne yazarsam o");
+
+      console.log($("input").val());
+
+      $("input").val("Buraya bir şeyler yaz");
+
+      function adsoyad() {
+        var ad = $("#ad").val();
+        var soyad = $("#soyad").val();
+        console.log("Adınız ve Soyadınız: " + ad + " " + soyad);
+      }
+
+      $("#ad").addClass("highlight");
+
+
+    //  addClass() methodu ile birden fazla class ekleme
+      //  removeClass() methodu ile class silme
+      // head içerisinde tanımlanan class removeClass ile silinir
+      $("#soyad").removeClass("highlight");
+
+      // toggleClass() methodu ile class ekleme ve silme
+      // önceden ekli ise siler, ekli değilse ekler
+
+
+
+    </script>
+  </body>
+</html>

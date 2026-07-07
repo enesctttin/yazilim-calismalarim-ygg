@@ -1,0 +1,38 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"> </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+@if (TempData["success"] != null)
+{
+    
+    
+
+    <script src="~/lib/jquery/dist/jquery.min.js"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <h2>@TempData["success"]   </h2>
+    @* toastr.success('Have fun storming the castle!', 'Miracle Max Says') *@
+
+}
+@if (TempData["error"] != null)
+{
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script type="text/javascript">
+        toastr.error('@TempData["error"]');
+    </script>
+
+}
+
+
+
+
+

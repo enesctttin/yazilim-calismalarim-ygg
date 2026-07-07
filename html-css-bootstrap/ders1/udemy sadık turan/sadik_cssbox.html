@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #showcase {
+        background-color: #2e4c6d;
+      }
+      #how-it-works {
+        background-color: blue;
+      }
+      .box {
+        height: 60px;
+        display: inline;
+      }
+      #first {
+        background-color: green;
+      }
+      #second {
+        background-color: red;
+      }
+      #third {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- her etiket icin bir kutu modeli oluşur -->
+    <!-- margin bloğun etrafındakı bosluğu ifade eder -->
+    <!-- padding border ile içerik arasssında kalan kısımdır   -->
+    <!-- border kutunun çevresini sarar -->
+    <main>
+      <section id="showcase">
+        <h1>Welcome to MovieApp</h1>
+      </section>
+      <section id="how-it-works">
+        <h2 style="display: inline-block">How it works</h2>
+        <span style="margin-left: 30px">bu yan yana</span>
+      </section>
+    </main>
+    <h1>1</h1>
+    <h1 style="padding: 20px">1</h1>
+    <h1>1</h1>
+    <!-- margin collaping  buna bak -->
+
+    <br /><br />
+    <hr />
+    <h1 style="background-color: red; padding: 30px">wwwweeerr</h1>
+    <h1 style="background-color: aqua">eeerrrrs</h1>
+    <br />
+    <hr />
+    <h1
+      style="background-color: aqua; padding-left: 18px; border: 5px solid blue"
+    >
+      kazim
+    </h1>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing -->
+    <!-- box sizing  -->
+    <!--  display -->
+    <!-- display : none|visibilty | inline | inline-block |block -->
+
+    <div class="box" id="first">bunlar</div>
+    <div class="box" id="second  ">icerisindeki</div>
+    <div class="box" id="third">eleman kadar yer kaplar</div>
+    <!-- bunlara margin ve padding özellik vermek istiyorsan inline-block element yapaman gerekir heidg ve weith kullanmak icin -->
+
+    <div>
+      <a href="">home </a>
+      <a href="">movies</a>
+      <a href="">contact</a>
+    </div>
+
+    <div>
+      <div class="box" id="first" style="visibility: hidden">bunlar</div>
+      <div class="box" id="second  " style="display: none">icerisindeki</div>
+      <div class="box" id="third">eleman kadar yer kaplar</div>
+    </div>
+    <!-- visibility görünürlüğü yok eder ama o kadar alan kapalar -->
+    <!-- display none yok eder -->
+    <!-- block eleman satırı olduğu gibi kaplar -->
+    <!-- kullancı etkileşimi java-scrpit -->
+
+    <br /><br />
+    <hr />
+    <h1>
+      navbar display inline-block yapip ekstra işlemler yapicaz calc()
+      fonksiyonunu kullanicaz
+    </h1>
+    <header style="display: inline-block; width: 100% ;">
+      <a href="#">menu</a>
+      <nav style="display: inline-block;  text-align: right; width: calc(100% -100px);  ">
+        <a href="#">anasayfa</a>
+        <a href="#">icerik</a>
+        <a href="#">foto</a>
+      </nav>
+    </header>
+  </body>
+</html>

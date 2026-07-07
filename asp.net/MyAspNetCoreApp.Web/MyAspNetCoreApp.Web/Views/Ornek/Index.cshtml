@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ornek sayfa  Index</h1>
+
+@* bu bir c# kodu *@
+@ViewBag.name  
+
+
+
+
+<a href="#">
+    @ViewBag.name
+
+</a>
+
+
+@{
+
+    var name = ViewBag.name;   // var karşıdan gelen neyse onun veri tipinde otomatik oluşturulan değişken burada tanımlamayı yaptık
+   <p> @name </p>
+
+}
+
+<p> @name </p>
+<hr />
+<p> yas: @ViewData["age"]</p>
+
+@foreach(var    item in ViewData["names"] as List<string>)  // hangi tipi gönderiyorsak as den sonrasında onu yazıyoruz
+{                                                           // bunu viewback ile de yapabiliriz
+    <p> @item  </p>
+
+}
+ @* class gönderme ve classtan eleman çekme *@
+<p>  @ViewBag.person.Id  - ViewBag.person.name   -ViewBag.person.age  </p>
+
+<hr />
+ViewModel ile veri gönderirken tipi yazılır ve yukarı tipi çıkarabilmesi için namespace alttaki formatta yazılır
+
+<hr />
+ 
+@using MyAspNetCoreApp.Web.Controllers
+@model List<Product>;
+@foreach (var item in Model)
+{
+    <p>   @item.Id- @item.name</p>
+}
+
+Razor kullanımı
+<hr />
+<hr />
+
+@DateTime.Now.ToShortDateString();
+@{
+    var mesaj = "merhaba";
+
+}
+
+selam :  @mesaj
+
+@if (true)  // 1==1
+{
+    <p> dogru  </p>
+}
+else
+{
+    <p> yanlıs</p>
+
+}
+
+@for(var i=0; i < 10; i++)
+{
+    <p>@i </p>
+}
+
+
+@foreach (var item in Enumerable.Range(1, 10).ToList())
+{
+    <p>@item  </p>
+}
+
+
+

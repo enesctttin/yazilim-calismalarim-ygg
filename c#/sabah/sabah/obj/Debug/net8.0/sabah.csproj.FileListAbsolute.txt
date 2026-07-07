@@ -1,0 +1,14 @@
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\bin\Debug\net8.0\sabah.exe
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\bin\Debug\net8.0\sabah.deps.json
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\bin\Debug\net8.0\sabah.runtimeconfig.json
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\bin\Debug\net8.0\sabah.dll
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\bin\Debug\net8.0\sabah.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\sabah.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\sabah.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\sabah.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\sabah.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\sabah.dll
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\refint\sabah.dll
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\sabah.pdb
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\sabah.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\Ygy\c#\sabah\sabah\obj\Debug\net8.0\ref\sabah.dll

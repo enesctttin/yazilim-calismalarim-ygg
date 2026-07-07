@@ -1,0 +1,36 @@
+﻿// 4. Güncelleme İşlemi (Edit) - 1. AŞAMA (GET)
+// Kullanıcı "Düzenle" butonuna bastığında çalışır. Formu dolu getirmek için veritabanından kişiyi bulur.
+public IActionResult Edit(int id)
+{
+var academician = _context.Academicians.Find(id); // ID'ye göre kişiyi bul
+    
+if (academician == null)
+{
+return NotFound(); // Böyle biri yoksa "Sayfa Bulunamadı" hatası ver
+}
+    
+return View(academician); // Bulunan kişiyi (eski bilgileriyle) forma gönder
+}
+
+// 4. Güncelleme İşlemi (Edit) - 2. AŞAMA (POST)
+// Kullanıcı formda değişiklik yapıp "Güncelle" butonuna bastığında çalışır.
+[HttpPost]
+public IActionResult Edit(int id, Academician academician)
+{
+// Güvenlik Önlemi: Adresteki ID ile formun içinden gelen ID aynı mı?
+if (id != academician.Id)
+{
+return NotFound();
+}
+
+if (ModelState.IsValid)
+{
+_context.Academicians.Update(academician); // Veriyi yeni haliyle güncelle
+_context.SaveChanges(); // SQL'e fiziksel olarak kaydet
+        
+return RedirectToAction("Index"); // Listeye geri dön
+}
+    
+// Eğer formu boş bırakıp kaydetmeye çalışırsa, formu hatalarla birlikte geri göster
+return View(academician);
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Iframe bir html sayfasının icine başka bir html sayfası yerleştirmek
+    istediğimiz zaman kullanırız
+    <!--  frameborder çerceve kalınlığı -->
+    <iframe
+      src="sadik_tables.html"
+      frameborder="0"
+      width="400px"
+      name="del"
+    ></iframe>
+
+    <!--  iframe isim vericez (name) vediğimiz isimle linke tıklanınca iframe içeriği değişecek -->
+    <p>
+      <a href="https://www.sadikturan.com/" target="del"> linke git</a>
+    </p>
+
+    <br />
+    <p>sayfa icerisinde video dondurme video paylas ardından yerleştir</p>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/sUWEuDSD7bE?si=psRf-RN_NlZJorJu"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>

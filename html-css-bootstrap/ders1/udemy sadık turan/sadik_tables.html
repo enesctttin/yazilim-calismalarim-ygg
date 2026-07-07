@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1" width="100%">
+      <!-- thead başlıkların oludğu yer tbody tablonun içerisi tr satır th ve td sütün -->
+      <thead>
+        <tr>
+          <th>isim</th>
+          <th>soyad</th>
+          <th>yil</th>
+          <th>renk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>enes</td>
+          <td>2004</td>
+          <td>mavi</td>
+        </tr>
+        <tr>
+          <td>ali</td>
+          <td rowspan="2">cetin</td>
+          <!-- rowspan satırları birleştiri  aşağı doğru çalışmış-->
+          <td>1998</td>
+          <td>siyah</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td></td>
+          <!--colspan iki sutunu birleştirir   -->
+          <td colspan="2">55</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+    <h2>yazilim kurslari</h2>
+    <table border="2">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>adi</th>
+          <th>aciklma</th>
+          <th>resim</th>
+          <th>link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>html</td>
+          <td>etiket ögrenimi</td>
+          <td><img src="images/baba.jpg" alt="yok"></td>
+          <td><a href="baba.html"></a>bas</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>css</td>
+          <td>renklendirme</td>
+          <td><img src="images/hababam-sinif.jpg" alt="var da yok"></td>
+          <td><a href="hababam-sinifi.html"></a>link</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
